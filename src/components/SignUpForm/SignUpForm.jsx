@@ -9,12 +9,15 @@ const SignUpForm = () => {
   const { setUser } = useContext(UserContext)
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
-    username: '',
+    name: '',
+    email: '',
+    phone: 0,
+    role: 'Volunteer',
     password: '',
     passwordConf: '',
   });
 
-  const { username, password, passwordConf } = formData;
+  const { name, email, phone, role, password, passwordConf } = formData;
 
   const handleChange = (evt) => {
     setMessage('');
@@ -34,7 +37,7 @@ const SignUpForm = () => {
   };
 
   const isFormInvalid = () => {
-    return !(username && password && password === passwordConf);
+    return !(name && password && password === passwordConf);
   };
 
   return (
@@ -43,15 +46,44 @@ const SignUpForm = () => {
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
         <div>
-          <label htmlFor='username'>Username:</label>
+          <label htmlFor='name'>name:</label>
           <input
             type='text'
             id='name'
-            value={username}
-            name='username'
+            value={name}
+            name='name'
             onChange={handleChange}
             required
           />
+        </div>
+        <div>
+          <label htmlFor='email'>Email:</label>
+          <input
+            type='text'
+            id='email'
+            value={email}
+            name='email'
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor='phone'>Phone:</label>
+          <input
+            type='number'
+            id='phone'
+            value={phone}
+            name='phone'
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div>
+          <label htmlFor='role'>Role:</label>
+          <select name="role" id="role" value={role} onChange={handleChange}>
+            <option value="Company">Company</option>
+            <option value="Volunteer">Volunteer</option>
+          </select>
         </div>
         <div>
           <label htmlFor='password'>Password:</label>

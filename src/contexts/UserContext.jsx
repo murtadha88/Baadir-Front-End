@@ -4,10 +4,19 @@ const UserContext = createContext()
 
 const getUserFromToken = () => {
     const token = localStorage.getItem('token')
+    const role = localStorage.getItem('role');
     if (!token) return null
 
-    return JSON.parse(atob(token.split('.')[1])).payload
+    const name = JSON.parse(atob(token.split('.')[1])).payload;
+
+    const user = {
+        name: name,
+        role: role,
+    }
+
+    return user;
 }
+
 
 
 function UserProvider({ children }) {
