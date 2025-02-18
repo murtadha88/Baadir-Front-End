@@ -23,15 +23,33 @@ const Dashboard = () => {
   }, [user])
 
   return (
+    <>
     <main>
-      <h1>Welcome, {user.username}</h1>
+      <h1>Welcome Back, {user.username}</h1>
       <p>
-        This is the dashboard page where you can see a list of all the users.
-      </p>
-      {listOfUsers.map((userObj) => (
+        Add a new event.
+      </p> 
+      <button>+</button>
+      <h4>event name</h4>
+      
+      {/* <ul>
+        {listOfEvents.map((events) => (
+            <li>
+            <h4>{events.name}</h4>
+            <p>{events.description}</p>
+            <p>{events.date}</p>
+            <p>{events.location}</p>
+            <p>{events.volunteers}</p>
+            <p>{events.applicationDeadLine}</p>
+            </li>
+        ))}
+        </ul> */}
+      
+      {/* {listOfUsers.map((userObj) => (
         <h4>{userObj.username}</h4>
-      ))}
+      ))} */}
     </main>
+    </>
   );
 };
 
