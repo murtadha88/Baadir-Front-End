@@ -27,6 +27,9 @@ const NavBar = () => {
 					<li>
 						<Link to="/">Dashboard</Link>
 					</li>
+					<li>
+						<Link to="/events">Events</Link>
+					</li>
 				</ul>
 			) : (
 				<ul>
@@ -39,6 +42,7 @@ const NavBar = () => {
 					<li>
 						<Link to="/">Home</Link>
 					</li>
+					
 				</ul>
 			)}
 		</nav>
