@@ -39,6 +39,9 @@ const NavBar = () => {
 					<li>
 						<Link to="/">Home</Link>
 					</li>
+					<li>
+						<Link to="/events/new">Home</Link>
+					</li>
 				</ul>
 			)}
 		</nav>
