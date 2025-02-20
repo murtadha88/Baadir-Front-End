@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { Routes, Route, useNavigate } from 'react-router'
 import { useContext, useState } from 'react'
+=======
+import { Routes, Route } from 'react-router'
+import { useContext, useState, useEffect } from 'react';
+>>>>>>> main
 import NavBar from './components/NavBar/NavBar'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import Landing from './components/Landing/Landing'
@@ -8,10 +13,15 @@ import EventsForm from './components/EventsForm/EventsForm'
 import Dashboard from './components/Dashboard/Dashboard'
 
 import { UserContext } from './contexts/UserContext'
+import * as eventService from './services/eventService';
+import EventList from './components/EventList/EventList';
+
+
 
 import * as eventsService from './services/eventServices'
 
 const App = () => {
+<<<<<<< HEAD
   const [events, setEvents] = useState([])
   const [addEvent, setAddEvent] = useState([])
   const [selected, setSelected] = useState(null)
@@ -48,18 +58,42 @@ const App = () => {
     setAddEvent([...addEvent, newEvent])
     navigate('/')
   }
+=======
+    const { user } = useContext(UserContext);
+    const [events, setEvents] = useState([]);
+  
+    useEffect(() => {
+      const fetchAllEvents = async () => {
+        const eventsData = await eventService.index();
+        setEvents(eventsData);
+        console.log(eventsData)
+      };
+>>>>>>> main
 
-  const { user } = useContext(UserContext)
+      if (user) fetchAllEvents();
+    }, [user]);
 
   return (
     <>
       <NavBar />
       <Routes>
-        {/* if user exists show dashboard otherwise show landing page */}
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+<<<<<<< HEAD
         <Route path='/sign-in' element={<SignInForm />} />
         <Route path='/sign-up' element={<SignUpForm />} />
         <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent}/>} />
+=======
+        {user ? (
+          <>
+            <Route path='/events' element={<EventList events={events} />} />
+          </>
+        ) : (
+          <>
+            <Route path='/sign-up' element={<SignUpForm />} />
+            <Route path='/sign-in' element={<SignInForm />} />
+          </>
+        )}
+>>>>>>> main
       </Routes>
     </>
   )
