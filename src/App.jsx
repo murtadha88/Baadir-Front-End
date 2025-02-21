@@ -85,7 +85,7 @@ const App = () => {
 =======
         {user ? (
           <>
-            <Route path='/events' element={<EventList events={events} />} />
+            <Route path='/Baadir/events' element={<EventList events={events} />} />
           </>
         ) : (
           <>
