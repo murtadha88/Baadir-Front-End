@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/events`;
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/Baadir/events`;
 
 const index = async () => {
     try {

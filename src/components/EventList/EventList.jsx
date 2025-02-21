@@ -1,6 +1,8 @@
-import { Link } from 'react-router';
-const EventList = (props) => {
+import { useContext } from 'react'
 
+import { UserContext } from '../../contexts/UserContext'
+const EventList = (props) => {
+    const { user, setUser } = useContext(UserContext)
     console.log(props.events)
     return (
         <main>
@@ -14,6 +16,12 @@ const EventList = (props) => {
                         <p>Location: {event.location}</p>
                         <p>Volunteer Needed: {event.volunteers}</p>
                         <p>Open to: {event.applicationDeadLine}</p>
+                        <p>Created by: {event.userId?.name}</p>
+                        {user.role === "Company" && user._id === event.userId ? (
+                            <button>Delete</button>
+                        ) : (
+                            <button>Apply</button>
+                        )}
 
                     </li>
                 </ul>

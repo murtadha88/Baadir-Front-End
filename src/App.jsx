@@ -33,7 +33,7 @@ const App = () => {
         <Route path='/' element={user ? <Dashboard /> : <Landing />} />
         {user ? (
           <>
-            <Route path='/events' element={<EventList events={events} />} />
+            <Route path='/Baadir/events' element={<EventList events={events} />} />
           </>
         ) : (
           <>
