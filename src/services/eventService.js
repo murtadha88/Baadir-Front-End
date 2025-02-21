@@ -26,9 +26,24 @@ const index = async () => {
       console.log(error.message);
     }
   };
+
+  // const deleteEvent = async (id) => {
+  //   try {
+  //     const res = await fetch(`${BASE_URL}/${id}`, {
+  //       method: 'DELETE',
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('token')}`,
+  //       },
+  //     });
+  //     return res.json();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
   
   export { 
     index,
     create,
+    // deleteEvent,
   };
   
