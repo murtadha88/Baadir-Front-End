@@ -6,19 +6,15 @@ const index = async () => {
             headers: { Authorization: `Bearer ${localStorage.getItem('token')}`}
         })
         const data = await res.json()
-
         if (data.err) {
             throw new Error(data.err)
         }
-        
         return data
-
     } catch (err) {
         console.log(err)
         throw new Error(err)
     }
 }
-
 export {
     index,
 }
