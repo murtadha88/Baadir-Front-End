@@ -6,13 +6,12 @@ const EventsForm = (props) => {
         description: '',
         date: '',
         location: '',
-        volunteer: 0,
+        volunteers: 0,
         applicationDeadLine: ''
     }
 
     const [formData, setFormData] = useState(
         initialState
-        // props.selected ? props.selected : initialState
     )
 
     const handleChange = (event) => {
@@ -68,8 +67,8 @@ const EventsForm = (props) => {
                 <label htmlFor="">Number of volunteers</label>
                 <input
                     type="number"
-                    name="volunteer"
-                    value={formData.volunteer}
+                    name="volunteers"
+                    value={formData.volunteers}
                     required
                     onChange={handleChange}
                     />

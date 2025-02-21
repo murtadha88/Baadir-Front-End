@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate } from 'react-router'
-import { useContext, useState } from 'react'
+import { useContext, useState, useEffect } from 'react'
 import NavBar from './components/NavBar/NavBar'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import Landing from './components/Landing/Landing'
@@ -11,16 +11,14 @@ import { UserContext } from './contexts/UserContext'
 import * as eventService from './services/eventService';
 import EventList from './components/EventList/EventList';
 
-
-
-import * as eventsService from './services/eventServices'
-
 const App = () => {
   const [events, setEvents] = useState([])
   const [addEvent, setAddEvent] = useState([])
   const [selected, setSelected] = useState(null)
   const [isFormDisplayed, setIsFormDisplayed] = useState(false)
-  
+
+  const { user } = useContext(UserContext);
+
   const navigate = useNavigate()
 
   const handleSelect = (event) => {
@@ -45,24 +43,22 @@ const App = () => {
     }
   }
 
-
-
   const handleAddEvent = async (formData) => {
-    const newEvent = await eventsService.create(formData)
-    setAddEvent([...addEvent, newEvent])
+    const newEvent = await eventService.create(formData)
+    setEvents([...events, newEvent])
     navigate('/')
   }
-    const { user } = useContext(UserContext);
-  
-    useEffect(() => {
-      const fetchAllEvents = async () => {
-        const eventsData = await eventService.index();
-        setEvents(eventsData);
-        console.log(eventsData)
-      };
 
-      if (user) fetchAllEvents();
-    }, [user]);
+
+  useEffect(() => {
+    const fetchAllEvents = async () => {
+      const eventsData = await eventService.index();
+      setEvents(eventsData);
+      console.log(eventsData)
+    };
+
+    if (user) fetchAllEvents();
+  }, [user]);
 
   return (
     <>
@@ -70,9 +66,9 @@ const App = () => {
       <Routes>
         {user ? (
           <>
-          <Route path='/' element={user ? <Dashboard /> : <Landing />} />
-          <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent}/>} />
-            <Route path='/Baadir/events' element={<EventList events={events} />} />
+            <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+            <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
+            <Route path='/baadir/events' element={<EventList events={events} />} />
           </>
         ) : (
           <>

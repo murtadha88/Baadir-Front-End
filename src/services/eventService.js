@@ -1,4 +1,4 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/Baadir/events`;
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/baadir/events`;
 
 const index = async () => {
     try {
@@ -23,7 +23,7 @@ const index = async () => {
       });
       return res.json();
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   };
   

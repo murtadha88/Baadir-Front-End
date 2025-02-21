@@ -1,7 +1,6 @@
 import { useContext, useEffect, useState } from 'react';
-
+import { Link } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
-
 import * as userService from '../../services/userService'
 
 const Dashboard = () => {
@@ -29,7 +28,7 @@ const Dashboard = () => {
       <p>
         Add a new event.
       </p> 
-      <button>+</button>
+      <Link to="/baadir/events/new"><button>+</button></Link>
       <h4>event name</h4>
       
       {/* <ul>
