@@ -42,13 +42,10 @@ const NavBar = () => {
 					<li>
 						<Link to="/">Home</Link>
 					</li>
-<<<<<<< HEAD
 					<li>
 						<Link to="/events/new">Home</Link>
 					</li>
-=======
 					
->>>>>>> main
 				</ul>
 			)}
 		</nav>

@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 import { Routes, Route, useNavigate } from 'react-router'
 import { useContext, useState } from 'react'
-=======
-import { Routes, Route } from 'react-router'
-import { useContext, useState, useEffect } from 'react';
->>>>>>> main
 import NavBar from './components/NavBar/NavBar'
 import SignUpForm from './components/SignUpForm/SignUpForm'
 import Landing from './components/Landing/Landing'
@@ -21,7 +16,6 @@ import EventList from './components/EventList/EventList';
 import * as eventsService from './services/eventServices'
 
 const App = () => {
-<<<<<<< HEAD
   const [events, setEvents] = useState([])
   const [addEvent, setAddEvent] = useState([])
   const [selected, setSelected] = useState(null)
@@ -58,9 +52,7 @@ const App = () => {
     setAddEvent([...addEvent, newEvent])
     navigate('/')
   }
-=======
     const { user } = useContext(UserContext);
-    const [events, setEvents] = useState([]);
   
     useEffect(() => {
       const fetchAllEvents = async () => {
@@ -68,7 +60,6 @@ const App = () => {
         setEvents(eventsData);
         console.log(eventsData)
       };
->>>>>>> main
 
       if (user) fetchAllEvents();
     }, [user]);
@@ -77,14 +68,10 @@ const App = () => {
     <>
       <NavBar />
       <Routes>
-        <Route path='/' element={user ? <Dashboard /> : <Landing />} />
-<<<<<<< HEAD
-        <Route path='/sign-in' element={<SignInForm />} />
-        <Route path='/sign-up' element={<SignUpForm />} />
-        <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent}/>} />
-=======
         {user ? (
           <>
+          <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+          <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent}/>} />
             <Route path='/Baadir/events' element={<EventList events={events} />} />
           </>
         ) : (
@@ -93,7 +80,6 @@ const App = () => {
             <Route path='/sign-in' element={<SignInForm />} />
           </>
         )}
->>>>>>> main
       </Routes>
     </>
   )
