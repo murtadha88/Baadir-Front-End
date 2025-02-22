@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/UserContext';
 
 const SignInForm = () => {
   const navigate = useNavigate();
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     email: '',
@@ -22,12 +22,10 @@ const SignInForm = () => {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      // This function doesn't exist yet, but we'll create it soon.
-      // It will cause an error right now
       const signedInUser = await signIn(formData);
 
-      setUser(signedInUser);
-      navigate('/');
+      await setUser(signedInUser);
+      navigate('/')
     } catch (err) {
       setMessage(err.message);
     }

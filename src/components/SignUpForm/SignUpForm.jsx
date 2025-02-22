@@ -6,7 +6,7 @@ import { UserContext } from '../../contexts/UserContext'
 
 const SignUpForm = () => {
   const navigate = useNavigate();
-  const { setUser } = useContext(UserContext)
+  const { user, setUser } = useContext(UserContext)
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     name: '',
@@ -27,7 +27,6 @@ const SignUpForm = () => {
   const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-        // sends formData to signUp service
         const newUser = await signUp(formData)
         setUser(newUser)
         navigate('/')

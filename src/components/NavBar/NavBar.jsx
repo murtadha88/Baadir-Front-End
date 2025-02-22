@@ -22,18 +22,28 @@ const NavBar = () => {
 						<li>Welcome, Volunteer</li>
 					)}
 					<li>
-						<Link to="/" onClick={handleSignOut}>Sign Out</Link>
-					</li>
-					<li>
-						<Link to="/">Dashboard</Link>
+						<Link to="/">Home</Link>
 					</li>
 					{user.role === "Company" ? (
+						<>
+							<li>
+								<Link to="/baadir/companyEvents">My Events</Link>
+							</li>
+							<li>
+								<Link to="/baadir/events/new">Add Events</Link>
+							</li>
+						</>
+					) : (
+						<li>
+							<Link to="/baadir/applications">Applications</Link>
+						</li>
+					)}
 					<li>
 						<Link to="/baadir/events">Events</Link>
 					</li>
-					) : (
-						<Link to="/baadir/applications">Applications</Link>
-					)}
+					<li>
+						<Link to="/" onClick={handleSignOut}>Sign Out</Link>
+					</li>
 				</ul>
 			) : (
 				<ul>
@@ -43,13 +53,6 @@ const NavBar = () => {
 					<li>
 						<Link to="/sign-in">Sign In</Link>
 					</li>
-					<li>
-						<Link to="/">Home</Link>
-					</li>
-					<li>
-						<Link to="/baadir/events/new">Home</Link>
-					</li>
-					
 				</ul>
 			)}
 		</nav>

@@ -1,3 +1,8 @@
+// import { useContext } from 'react';
+// import { UserContext } from '../../contexts/UserContext';
+
+// const { user } = useContext(UserContext)
+
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/baadir`;
 
 const index = async () => {
@@ -21,6 +26,7 @@ const companyIndex = async () => {
         console.log(error);
     }
 };
+
 const create = async (eventFormData) => {
     try {
         const res = await fetch(`${BASE_URL}/events`, {

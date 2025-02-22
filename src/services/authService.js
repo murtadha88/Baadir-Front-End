@@ -16,7 +16,6 @@ const signUp = async (formData) => {
 
         if (data.token) {
             localStorage.setItem('token', data.token)
-            localStorage.setItem('role', data.role)
             const payload = JSON.parse(atob(data.token.split('.')[1])).payload
             return payload
         }
@@ -46,7 +45,6 @@ const signIn = async (formData) => {
 
         if (data.token) {
             localStorage.setItem('token', data.token)
-            localStorage.setItem('role', data.role)
             return JSON.parse(atob(data.token.split('.')[1])).payload
         }
 

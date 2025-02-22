@@ -21,12 +21,6 @@ const EventsForm = (props) => {
     const handleSubmit = (event) => {
         event.preventDefault()
         props.handleAddEvent(formData)
-
-        // if (props.selected) {
-        //     props.handleUpdate(formData, props.selected.id)
-        // } else {
-        //     props.handleChange(formData)
-        // }
     }
 
     return (

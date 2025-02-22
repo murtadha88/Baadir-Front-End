@@ -2,13 +2,12 @@ import { useContext } from 'react'
 
 import { UserContext } from '../../contexts/UserContext'
 const EventList = (props) => {
-    const { user, setUser } = useContext(UserContext)
+    const { user } = useContext(UserContext)
     return (
         <main>
-
+            <ul>
             {props.events.map((event) => (
-                <ul key={event._id}>
-                    <li>
+                    <li key={event._id}>
                         <h4>{event.name}</h4>
                         <p>Description: {event.description}</p>
                         <p>Event Date: {event.date}</p>
@@ -23,8 +22,8 @@ const EventList = (props) => {
                         )}
 
                     </li>
-                </ul>
             ))}
+            </ul>
         </main>
     );
 

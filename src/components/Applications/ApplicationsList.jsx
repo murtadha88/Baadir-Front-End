@@ -2,7 +2,7 @@ import { useContext } from 'react'
 import { UserContext } from '../../contexts/UserContext'
 
 const ApplicationsList = (props) => {
-    const { user, setUser } = useContext(UserContext)
+    const { user } = useContext(UserContext)
 
     return (
         <main>
@@ -12,7 +12,6 @@ const ApplicationsList = (props) => {
                         <h2>You dont have applications!</h2>
                     ) : (
                         props.applications.map((application) => (
-                            <>
                                 <ul key={application._id}>
                                     {props.events.map((event, index) => (
                                         application.eventId === event._id ? (
@@ -32,9 +31,8 @@ const ApplicationsList = (props) => {
                                             null
                                         )
                                     ))}
+                                    <hr />
                                 </ul>
-                                <hr />
-                            </>
                         ))
                     )}
                 </>
