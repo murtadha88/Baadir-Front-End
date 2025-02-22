@@ -11,23 +11,39 @@ const index = async () => {
   }
 };
 
-const create = async (eventFormData) => {
-  try {
-    const res = await fetch(BASE_URL, {
-      method: 'POST',
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('token')}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(eventFormData),
-    });
-    return res.json();
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+  const create = async (eventFormData) => {
+    try {
+      const res = await fetch(BASE_URL, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(eventFormData),
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
-export {
-  index,
-  create,
-};
+  // const deleteEvent = async (id) => {
+  //   try {
+  //     const res = await fetch(`${BASE_URL}/${id}`, {
+  //       method: 'DELETE',
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('token')}`,
+  //       },
+  //     });
+  //     return res.json();
+  //   } catch (err) {
+  //     console.log(err);
+  //   }
+  // }
+  
+  export { 
+    index,
+    create,
+    // deleteEvent,
+  };
+  

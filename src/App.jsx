@@ -6,6 +6,7 @@ import Landing from './components/Landing/Landing'
 import SignInForm from './components/SignInForm/SignInForm'
 import EventsForm from './components/EventsForm/EventsForm'
 import Dashboard from './components/Dashboard/Dashboard'
+import EventsDetails from './components/EventDetails/EventDetails'
 
 import { UserContext } from './contexts/UserContext'
 
@@ -29,7 +30,7 @@ const App = () => {
 
   const handleSelect = (event) => {
     setSelected(event)
-    setIsForm(false)
+    setIsFormDisplayed(false)
   }
 
   const handleFormView = (event) => {
@@ -39,11 +40,11 @@ const App = () => {
 
   const handleSubmit = async (formData) => {
     try {
-      const newEvent = await eventsService.create(formData)
+      const newEvent = await eventService.create(formData)
       if (newEvent.err) {
         throw new Error(newEvent.err)
       }
-      setEvents([newEvent, events])
+      setEvents([newEvent, ...events])
     } catch (err) {
       console.log(err)
     }
@@ -54,6 +55,13 @@ const App = () => {
     setEvents([...events, newEvent])
     navigate('/')
   }
+
+  // const handleDeleteEvent = async (id) => {
+  //   console.log('userId', id)
+  //   const deleteEvent = await eventService.deleteEvent(id)
+  //   setEvents(events.filter((event) => event._id !== deleteEvent._id))
+  //   navigate('/baadir/events')
+  // }
 
 
   useEffect(() => {
@@ -81,6 +89,8 @@ const App = () => {
             <Route path='/' element={user ? <Dashboard /> : <Landing />} />
             <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
             <Route path='/baadir/events' element={<EventList events={events} />} />
+            {/* <Route path='/baadir/events/view' element={<EventsDetails handleDeleteEvent={handleDeleteEvent} />} /> */}
+        <Route path='/baadir/events/view' element={<EventsDetails events={events} />} />
             <Route path='/baadir/applications' element={<ApplicationsList applications={applications} events={events} />} />
           </>
         ) : (
