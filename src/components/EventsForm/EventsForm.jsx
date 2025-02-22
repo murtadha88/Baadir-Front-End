@@ -29,8 +29,6 @@ const EventsForm = (props) => {
         } else {
             props.handleAddEvent(formData)
         }
-    
-    props.handleAddEvent(formData)
     }
 
 
