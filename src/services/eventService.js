@@ -1,8 +1,3 @@
-// import { useContext } from 'react';
-// import { UserContext } from '../../contexts/UserContext';
-
-// const { user } = useContext(UserContext)
-
 const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/baadir`;
 
 const index = async () => {

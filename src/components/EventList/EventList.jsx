@@ -1,14 +1,18 @@
 import { useContext } from 'react'
-
 import { UserContext } from '../../contexts/UserContext'
 import { Link } from 'react-router'
 
 const EventList = (props) => {
     const { user } = useContext(UserContext)
+
+    const handleApplication = (eventId) => {
+        props.handleAddApplication(eventId)
+    }
+    
     return (
         <main>
             <ul>
-            {props.events.map((event) => (
+                {props.events.map((event) => (
                     <li key={event._id}>
                         <h4>{event.name}</h4>
                         <p>Description: {event.description}</p>
@@ -17,14 +21,14 @@ const EventList = (props) => {
                         <p>Volunteer Needed: {event.volunteers}</p>
                         <p>Open to: {event.applicationDeadLine}</p>
                         <p>Created by: {event.userId?.name}</p>
-                        {user.role !== "Company"? (
-                             <button>Apply</button>
+                        {user.role !== "Company" ? (
+                            <button onClick={() => handleApplication(event._id)}>Apply</button>
                         ) : (
-                           null
+                            null
                         )}
                         <Link key={event._id} to={`/baadir/events/${event._id}`}><button>View</button></Link>
                     </li>
-            ))}
+                ))}
             </ul>
         </main>
     );
