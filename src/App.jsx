@@ -25,7 +25,6 @@ const App = () => {
 
   const [applications, setApplications] = useState([])
 
-  const [applications, setApplications] = useState([])
   const { user } = useContext(UserContext);
   const navigate = useNavigate()
   const handleSelect = (event) => {
@@ -89,14 +88,14 @@ const App = () => {
       <Routes>
         {user ? (
           <>
-          
-            <Route path='/' element={user.role === "Company" ? <Dashboard companyEvents = {companyEvents} /> : <EventList events={events}/>} />
+
+            <Route path='/' element={user.role === "Company" ? <Dashboard companyEvents={companyEvents} /> : <EventList events={events} />} />
             <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
             <Route path='/baadir/events' element={<EventList events={events} />} />
             {/* <Route path='/baadir/events/view' element={<EventsDetails handleDeleteEvent={handleDeleteEvent} />} /> */}
-        <Route path='/baadir/events/view' element={<EventsDetails events={events} />} />
+            <Route path='/baadir/events/view' element={<EventsDetails events={events} />} />
             <Route path='/baadir/applications' element={<ApplicationsList applications={applications} events={events} />} />
-           
+
           </>
         ) : (
           <>
