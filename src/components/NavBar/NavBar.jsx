@@ -27,10 +27,13 @@ const NavBar = () => {
 					<li>
 						<Link to="/">Dashboard</Link>
 					</li>
+					{user.role === "Company" ? (
 					<li>
 						<Link to="/baadir/events">Events</Link>
 					</li>
-
+					) : (
+						<Link to="/baadir/applications">Applications</Link>
+					)}
 				</ul>
 			) : (
 				<ul>
