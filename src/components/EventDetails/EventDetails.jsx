@@ -1,9 +1,11 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
+import { useContext, useState, useEffect } from "react";
+import { useParams, Link } from "react-router";
 import * as eventService from '../../services/eventService';
+import { UserContext } from "../../contexts/UserContext";
 
-const EventsDetails = () => {
+const EventsDetails = (props) => {
     const { eventId } = useParams();
+    const { user } = useContext(UserContext)
     const [event, setEvent] = useState(null);
 
     useEffect(() => {
@@ -25,10 +27,14 @@ const EventsDetails = () => {
             <p>Location: {event.location}</p>
             <p>Number of Volunteers: {event.volunteers}</p>
             <p>Application Deadline: {event.applicationDeadLine}</p>
+           
+          
+            <Link to={`/baadir/events/${eventId}/edit`}><button>Edit</button></Link>
+            
+            {event.userId._id === user._id && (
+                <button onClick={() => props.handleDeleteEvent(eventId)}>Delete</button>
+            )}
 
-            {/* {events.author._id === user._id && (
-                <button onClick={() => props.handleDeleteevents(id)}>Delete</button>
-            )} */}
         </div>
     )
 }

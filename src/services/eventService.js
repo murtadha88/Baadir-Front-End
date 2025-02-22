@@ -54,24 +54,41 @@ const show = async (eventId) => {
   }
 };
 
-// const deleteEvent = async (id) => {
-//   try {
-//     const res = await fetch(`${BASE_URL}/${id}`, {
-//       method: 'DELETE',
-//       headers: {
-//         Authorization: `Bearer ${localStorage.getItem('token')}`,
-//       },
-//     });
-//     return res.json();
-//   } catch (err) {
-//     console.log(err);
-//   }
-// }
+const deleteEvent = async (eventId) => {
+    try {
+      const res = await fetch(`${BASE_URL}/companyEvents/${eventId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      });
+      return res.json();
+    } catch (err) {
+      console.log(err);
+    }
+  }
 
+async function update(eventId, eventFormData) {
+    try {
+      const res = await fetch(`${BASE_URL}/events/${eventId}`, {
+        method: 'PUT',
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(eventFormData),
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+  
 export {
     index,
     create,
-    // deleteEvent,
+    deleteEvent,
     companyIndex,
     show,
+    update,
 };

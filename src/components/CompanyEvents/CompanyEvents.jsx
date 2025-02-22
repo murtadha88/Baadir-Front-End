@@ -9,9 +9,9 @@ const CompanyEvents = (props) => {
       <main>
         <h1>Welcome Back, {user.name}</h1>
 
-        <p>Add a new event.</p>
+        
         <Link to="/baadir/events/new">
-          <button>+</button>
+          <button>Add Event</button>
         </Link>
 
         <h4>Your Events</h4>
@@ -27,8 +27,11 @@ const CompanyEvents = (props) => {
                 <p>Volunteer Needed: {event.volunteers}</p>
                 <p>Open to: {event.applicationDeadLine}</p>
                 <p>Created by: {event.userId?.name}</p>
-
-                <button>Delete</button>
+                <Link key={event._id} to={`/baadir/events/${event._id}`}><button>View</button></Link>
+                <Link to={`/baadir/companyEvents`}>
+                <button onClick={() => props.handleDeleteEvent(event._id)}>Delete</button>
+                </Link>
+                
               </li>
             ))}
           </ul>

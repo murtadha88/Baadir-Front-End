@@ -31,13 +31,17 @@ const App = () => {
     navigate('/baadir/companyEvents')
   }
 
-  // const handleDeleteEvent = async (id) => {
-  //   console.log('userId', id)
-  //   const deleteEvent = await eventService.deleteEvent(id)
-  //   setEvents(events.filter((event) => event._id !== deleteEvent._id))
-  //   navigate('/baadir/events')
-  // }
+  const handleDeleteEvent = async (eventId) => {
+    const deleteEvent = await eventService.deleteEvent(eventId)
+    setEvents(events.filter((event) => event._id !== deleteEvent._id))
+    navigate('/baadir/companyEvents')
+  }
 
+  const handleEditEvent = async (eventId, eventFormData)=>{
+    const updatedEvent = await eventService.update(eventId, eventFormData)
+    setEvents(events.map((event)=>(eventId === event._id ? updatedEvent : event)))
+    navigate(`/baadir/events/${eventId}`)
+  }
 
   useEffect(() => {
     if (!user) return
@@ -74,11 +78,13 @@ const App = () => {
           <>
             <Route path='/' element={<Home />} />
             <Route path='/baadir/events' element={<EventList events={events} />} />
-            <Route path='/baadir/events/:eventId' element={<EventsDetails />} />
+            <Route path='/baadir/events/:eventId' element={<EventsDetails handleDeleteEvent={handleDeleteEvent} />} />
             {user.role === "Company" ? (
               <>
-                <Route path='/baadir/companyEvents' element={<CompanyEvents companyEvents={companyEvents} />} />
+                <Route path='/baadir/companyEvents' element={<CompanyEvents companyEvents={companyEvents} handleDeleteEvent={handleDeleteEvent}/>} />
                 <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
+                <Route path='/baadir/events/:eventId/edit' element={<EventsForm handleEditEvent={handleEditEvent}/>} />
+
               </>
             ) : (
               <>   
