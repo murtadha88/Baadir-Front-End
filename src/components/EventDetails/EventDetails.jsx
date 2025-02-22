@@ -1,20 +1,30 @@
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
+import * as eventService from '../../services/eventService';
 
-import { UserContext } from "../../contexts/UserContext";
+const EventsDetails = () => {
+    const { eventId } = useParams();
+    const [event, setEvent] = useState(null);
 
-const EventsDetails = (props) => {
-    const { user } = useContext(UserContext);
+    useEffect(() => {
+        const fetchEvent = async () => {
+            const eventData = await eventService.show(eventId)
+            setEvent(eventData)
+        }
+        fetchEvent()
+    }, [eventId]);
+
+    if (!event) return <main>Loading</main>
 
     return (
         <div>
             <h1>events Details</h1>
-            <h2>events Name: {props.events.name}</h2>
-            <p>Description: {props.events.description}</p>
-            <p>Date: {props.events.date}</p>
-            <p>Location: {props.events.location}</p>
-            <p>Number of Volunteers: {props.events.volunteers}</p>
-            <p>Application Deadline: {props.events.applicationDeadLine}</p>
+            <h2>{event.name}</h2>
+            <p>Description: {event.description}</p>
+            <p>Date: {event.date}</p>
+            <p>Location: {event.location}</p>
+            <p>Number of Volunteers: {event.volunteers}</p>
+            <p>Application Deadline: {event.applicationDeadLine}</p>
 
             {/* {events.author._id === user._id && (
                 <button onClick={() => props.handleDeleteevents(id)}>Delete</button>

@@ -1,6 +1,8 @@
 import { useContext } from 'react'
 
 import { UserContext } from '../../contexts/UserContext'
+import { Link } from 'react-router'
+
 const EventList = (props) => {
     const { user } = useContext(UserContext)
     return (
@@ -20,7 +22,7 @@ const EventList = (props) => {
                         ) : (
                            null
                         )}
-
+                        <Link key={event._id} to={`/baadir/events/${event._id}`}><button>View</button></Link>
                     </li>
             ))}
             </ul>

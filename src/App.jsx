@@ -74,14 +74,14 @@ const App = () => {
           <>
             <Route path='/' element={<Home />} />
             <Route path='/baadir/events' element={<EventList events={events} />} />
+            <Route path='/baadir/events/:eventId' element={<EventsDetails />} />
             {user.role === "Company" ? (
               <>
                 <Route path='/baadir/companyEvents' element={<CompanyEvents companyEvents={companyEvents} />} />
                 <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
               </>
             ) : (
-              <>
-                <Route path='/baadir/events/view' element={<EventsDetails events={events} />} />
+              <>   
                 <Route path='/baadir/applications' element={<ApplicationsList applications={applications} events={events} />} />
               </>
             )}

@@ -43,6 +43,17 @@ const create = async (eventFormData) => {
     }
 };
 
+const show = async (eventId) => {
+  try {
+      const res = await fetch(`${BASE_URL}/events/${eventId}`, {
+          headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      });
+      return res.json();
+  } catch (error) {
+      console.log(error);
+  }
+};
+
 // const deleteEvent = async (id) => {
 //   try {
 //     const res = await fetch(`${BASE_URL}/${id}`, {
@@ -62,4 +73,5 @@ export {
     create,
     // deleteEvent,
     companyIndex,
+    show,
 };
