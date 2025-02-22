@@ -3,7 +3,6 @@ import { useContext } from 'react'
 import { UserContext } from '../../contexts/UserContext'
 const EventList = (props) => {
     const { user, setUser } = useContext(UserContext)
-    console.log(props.events)
     return (
         <main>
 

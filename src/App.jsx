@@ -8,14 +8,20 @@ import EventsForm from './components/EventsForm/EventsForm'
 import Dashboard from './components/Dashboard/Dashboard'
 
 import { UserContext } from './contexts/UserContext'
+
 import * as eventService from './services/eventService';
 import EventList from './components/EventList/EventList';
+
+import * as applicationService from './services/applicationService';
+import ApplicationsList from './components/Applications/ApplicationsList'
 
 const App = () => {
   const [events, setEvents] = useState([])
   const [addEvent, setAddEvent] = useState([])
   const [selected, setSelected] = useState(null)
   const [isFormDisplayed, setIsFormDisplayed] = useState(false)
+
+  const [applications, setApplications] = useState([])
 
   const { user } = useContext(UserContext);
 
@@ -54,10 +60,16 @@ const App = () => {
     const fetchAllEvents = async () => {
       const eventsData = await eventService.index();
       setEvents(eventsData);
-      console.log(eventsData)
     };
 
     if (user) fetchAllEvents();
+
+    const fetchAllApplications = async () => {
+      const applicationsData = await applicationService.index();
+      setApplications(applicationsData);
+    };
+
+    if (user) fetchAllApplications();
   }, [user]);
 
   return (
@@ -69,6 +81,7 @@ const App = () => {
             <Route path='/' element={user ? <Dashboard /> : <Landing />} />
             <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
             <Route path='/baadir/events' element={<EventList events={events} />} />
+            <Route path='/baadir/applications' element={<ApplicationsList applications={applications} events={events} />} />
           </>
         ) : (
           <>
