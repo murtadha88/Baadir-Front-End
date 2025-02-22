@@ -17,10 +17,10 @@ const EventList = (props) => {
                         <p>Volunteer Needed: {event.volunteers}</p>
                         <p>Open to: {event.applicationDeadLine}</p>
                         <p>Created by: {event.userId?.name}</p>
-                        {user.role === "Company" && user._id === event.userId ? (
-                            <button>Delete</button>
+                        {user.role !== "Company"? (
+                             <button>Apply</button>
                         ) : (
-                            <button>Apply</button>
+                           null
                         )}
 
                     </li>

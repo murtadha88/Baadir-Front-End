@@ -1,8 +1,8 @@
-const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/baadir/events`;
+const BASE_URL = `${import.meta.env.VITE_BACK_END_SERVER_URL}/baadir`;
 
 const index = async () => {
     try {
-      const res = await fetch(BASE_URL, {
+      const res = await fetch(`${BASE_URL}/events`, {
         headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
       });
       return res.json();
@@ -11,9 +11,19 @@ const index = async () => {
     }
   };
 
+  const companyIndex = async () => {
+    try {
+      const res = await fetch(`${BASE_URL}/companyEvents`, {
+        headers: { Authorization: `Bearer ${localStorage.getItem('token')}` },
+      });
+      return res.json();
+    } catch (error) {
+      console.log(error);
+    }
+  };
   const create = async (eventFormData) => {
     try {
-      const res = await fetch(BASE_URL, {
+      const res = await fetch(`${BASE_URL}/events`, {
         method: 'POST',
         headers: {
           Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -30,5 +40,6 @@ const index = async () => {
   export { 
     index,
     create,
+    companyIndex,
   };
   

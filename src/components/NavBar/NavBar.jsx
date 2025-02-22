@@ -30,6 +30,7 @@ const NavBar = () => {
 					<li>
 						<Link to="/baadir/events">Events</Link>
 					</li>
+
 				</ul>
 			) : (
 				<ul>

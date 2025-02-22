@@ -6,31 +6,28 @@ import Landing from './components/Landing/Landing'
 import SignInForm from './components/SignInForm/SignInForm'
 import EventsForm from './components/EventsForm/EventsForm'
 import Dashboard from './components/Dashboard/Dashboard'
-
 import { UserContext } from './contexts/UserContext'
 import * as eventService from './services/eventService';
 import EventList from './components/EventList/EventList';
 
+
 const App = () => {
   const [events, setEvents] = useState([])
+  const [companyEvents, setCompanyEvents] = useState([])
   const [addEvent, setAddEvent] = useState([])
   const [selected, setSelected] = useState(null)
   const [isFormDisplayed, setIsFormDisplayed] = useState(false)
-
+  const [applications, setApplications] = useState([])
   const { user } = useContext(UserContext);
-
   const navigate = useNavigate()
-
   const handleSelect = (event) => {
     setSelected(event)
     setIsForm(false)
   }
-
   const handleFormView = (event) => {
     setSelected(null)
     setIsFormDisplayed(true)
   }
-
   const handleSubmit = async (formData) => {
     try {
       const newEvent = await eventsService.create(formData)
@@ -42,33 +39,38 @@ const App = () => {
       console.log(err)
     }
   }
-
   const handleAddEvent = async (formData) => {
     const newEvent = await eventService.create(formData)
     setEvents([...events, newEvent])
     navigate('/')
   }
-
-
   useEffect(() => {
     const fetchAllEvents = async () => {
       const eventsData = await eventService.index();
       setEvents(eventsData);
       console.log(eventsData)
     };
-
     if (user) fetchAllEvents();
-  }, [user]);
 
+    const fetchAllCompanyEvents = async () => {
+      const eventsData = await eventService.companyIndex();
+      setCompanyEvents(eventsData);
+      console.log(eventsData)
+    };
+    if (user) fetchAllCompanyEvents();
+
+  }, [user]);
   return (
     <>
       <NavBar />
       <Routes>
         {user ? (
           <>
-            <Route path='/' element={user ? <Dashboard /> : <Landing />} />
+          
+            <Route path='/' element={user.role === "Company" ? <Dashboard companyEvents = {companyEvents} /> : <EventList events={events}/>} />
             <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
             <Route path='/baadir/events' element={<EventList events={events} />} />
+           
           </>
         ) : (
           <>
@@ -80,5 +82,4 @@ const App = () => {
     </>
   )
 }
-
 export default App
