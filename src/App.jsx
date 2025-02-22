@@ -16,11 +16,14 @@ import EventList from './components/EventList/EventList';
 import * as applicationService from './services/applicationService';
 import ApplicationsList from './components/Applications/ApplicationsList'
 
+import ApplicantsList from './components/Applicants/ApplicantsList'
+
 const App = () => {
   const [events, setEvents] = useState([])
   const [companyEvents, setCompanyEvents] = useState([])
 
   const [applications, setApplications] = useState([])
+  const [applicants, setApplicants] = useState([]);
 
   const { user } = useContext(UserContext);
   const navigate = useNavigate()
@@ -31,12 +34,24 @@ const App = () => {
     navigate('/baadir/companyEvents')
   }
 
+  const handleAddApplication = async (eventId) => {
+    const newApplications = await applicationService.create(eventId)
+    setApplications([...applications, newApplications])
+    navigate('/baadir/applications')
+  }
+
   // const handleDeleteEvent = async (id) => {
   //   console.log('userId', id)
   //   const deleteEvent = await eventService.deleteEvent(id)
   //   setEvents(events.filter((event) => event._id !== deleteEvent._id))
   //   navigate('/baadir/events')
   // }
+
+  const handleApplicantsList = async (eventId) => {
+    const applicationsData = await applicationService.applicationIndex(eventId)
+    console.log(applicationsData);
+      setApplicants(applicationsData)
+  }
 
 
   useEffect(() => {
@@ -62,6 +77,7 @@ const App = () => {
         setCompanyEvents(eventsData)
       }
       fetchAllCompanyEvents()
+
     }
   }, [user])
 
@@ -73,12 +89,13 @@ const App = () => {
         {user ? (
           <>
             <Route path='/' element={<Home />} />
-            <Route path='/baadir/events' element={<EventList events={events} />} />
-            <Route path='/baadir/events/:eventId' element={<EventsDetails />} />
+            <Route path='/baadir/events' element={<EventList events={events}  handleAddApplication={handleAddApplication} />} />
+            <Route path='/baadir/events/:eventId' element={<EventsDetails handleApplicantsList = {handleApplicantsList} />} />
             {user.role === "Company" ? (
               <>
                 <Route path='/baadir/companyEvents' element={<CompanyEvents companyEvents={companyEvents} />} />
                 <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
+                <Route path='/baadir/events/:eventId/applications' element={<ApplicantsList applicants={applicants} />} />
               </>
             ) : (
               <>   

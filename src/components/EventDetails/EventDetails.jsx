@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router";
 import * as eventService from '../../services/eventService';
+import * as applicationService from '../../services/applicationService';
+import { Link } from "react-router";
 
-const EventsDetails = () => {
+const EventsDetails = (props) => {
     const { eventId } = useParams();
     const [event, setEvent] = useState(null);
 
@@ -13,6 +15,13 @@ const EventsDetails = () => {
         }
         fetchEvent()
     }, [eventId]);
+
+
+    const handleApplicantsList = () => {
+        props.handleApplicantsList(eventId);
+    }
+
+
 
     if (!event) return <main>Loading</main>
 
@@ -25,6 +34,9 @@ const EventsDetails = () => {
             <p>Location: {event.location}</p>
             <p>Number of Volunteers: {event.volunteers}</p>
             <p>Application Deadline: {event.applicationDeadLine}</p>
+
+            <Link key={event._id} to={`/baadir/events/${event._id}/applications`}><button onClick={handleApplicantsList}>Applicants</button></Link>
+
 
             {/* {events.author._id === user._id && (
                 <button onClick={() => props.handleDeleteevents(id)}>Delete</button>

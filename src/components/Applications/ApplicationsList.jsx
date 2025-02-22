@@ -17,7 +17,6 @@ const ApplicationsList = (props) => {
                                         application.eventId === event._id ? (
                                             <li key={index}>
                                                 <h4>{event.name}</h4>
-                                                <p>Status: {application.status}</p>
                                                 <p>
                                                     Date: {new Date(event.date).toLocaleDateString('en-GB', {
                                                         day: '2-digit',
