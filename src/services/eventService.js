@@ -61,7 +61,7 @@ const deleteEvent = async (eventId) => {
     } catch (err) {
       console.log(err);
     }
-  }
+}
 
 async function update(eventId, eventFormData) {
     try {
