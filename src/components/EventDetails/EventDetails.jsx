@@ -1,8 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { useParams, Link } from "react-router";
 import * as eventService from '../../services/eventService';
-import * as applicationService from '../../services/applicationService';
-import { Link } from "react-router";
 import { UserContext } from "../../contexts/UserContext";
 
 const EventsDetails = (props) => {
@@ -23,8 +21,6 @@ const EventsDetails = (props) => {
         props.handleApplicantsList(eventId);
     }
 
-
-
     if (!event) return <main>Loading</main>
 
     return (
@@ -37,16 +33,21 @@ const EventsDetails = (props) => {
             <p>Number of Volunteers: {event.volunteers}</p>
             <p>Application Deadline: {event.applicationDeadLine}</p>
 
-            <Link key={event._id} to={`/baadir/events/${event._id}/applications`}><button onClick={handleApplicantsList}>Applicants</button></Link>
-
-           
-          
-            <Link to={`/baadir/events/${eventId}/edit`}><button>Edit</button></Link>
-            
-            {event.userId._id === user._id && (
-                <button onClick={() => props.handleDeleteEvent(eventId)}>Delete</button>
-            )}
-
+            {user.role === "Company" ? (
+                <>
+                    <Link key={event._id} to={`/baadir/events/${event._id}/applications`}>
+                        <button onClick={handleApplicantsList}>Applicants</button>
+                    </Link>
+                    <Link to={`/baadir/events/${event._id}/edit`}>
+                        <button>Edit</button>
+                    </Link>
+                    {event.userId._id === user._id && (
+                        <button onClick={() => props.handleDeleteEvent(event._id)}>
+                            Delete
+                        </button>
+                    )}
+                </>
+            ) : null}
         </div>
     )
 }

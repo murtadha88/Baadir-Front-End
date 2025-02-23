@@ -52,6 +52,11 @@ const App = () => {
     navigate(`/baadir/events/${eventId}`)
   }
 
+  const handleApplicantsList = async (eventId) => {
+    const applicationsData = await applicationService.applicationIndex(eventId)
+      setApplicants(applicationsData)
+  }
+
   useEffect(() => {
     if (!user) return
 
@@ -88,13 +93,12 @@ const App = () => {
           <>
             <Route path='/' element={<Home />} />
             <Route path='/baadir/events' element={<EventList events={events}  handleAddApplication={handleAddApplication} />} />
-            <Route path='/baadir/events/:eventId' element={<EventsDetails handleApplicantsList = {handleApplicantsList} />} />
+            <Route path='/baadir/events/:eventId' element={<EventsDetails handleApplicantsList = {handleApplicantsList} handleDeleteEvent={handleDeleteEvent} />} />
             {user.role === "Company" ? (
               <>
                 <Route path='/baadir/companyEvents' element={<CompanyEvents companyEvents={companyEvents} handleDeleteEvent={handleDeleteEvent}/>} />
                 <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
                 <Route path='/baadir/events/:eventId/edit' element={<EventsForm handleEditEvent={handleEditEvent}/>} />
-
                 <Route path='/baadir/events/:eventId/applications' element={<ApplicantsList applicants={applicants} />} />
               </>
             ) : (

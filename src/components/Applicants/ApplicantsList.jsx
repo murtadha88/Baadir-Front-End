@@ -7,7 +7,6 @@ import * as userService from '../../services/userService';
 
 
 const ApplicantsList = (props) => {
-    console.log(props.applicants)
     const [listOfUsers, setListOfUsers] = useState([])
     const { user } = useContext(UserContext)
 
