@@ -1,8 +1,9 @@
 import { useState, useContext } from 'react';
-import { useNavigate } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import { signUp } from '../../services/authService'
 
 import { UserContext } from '../../contexts/UserContext'
+import '../../CSS/SignUpForm.css'
 
 const SignUpForm = () => {
   const navigate = useNavigate();
@@ -40,12 +41,16 @@ const SignUpForm = () => {
   };
 
   return (
-    <main>
-      <h1>Sign Up</h1>
+    <>
+    <img id='baadir-logo' src="src/images/Logo.png" alt="Baadir logo" />
+    <img id='volunteer-illustration' src="src/images/auth-image.png" alt="volunteer-illustration" />
+      <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
+    <main className='signup-form'>
+      {/* <h1>Sign Up</h1> */}
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor='name'>name:</label>
+        <div className='name-group'>
+          <label htmlFor='name' id='name-label'>name:</label>
           <input
             type='text'
             id='name'
@@ -56,7 +61,7 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <label htmlFor='email'>Email:</label>
+          <label htmlFor='email' id='email-label'>Email:</label>
           <input
             type='text'
             id='email'
@@ -67,7 +72,7 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <label htmlFor='phone'>Phone:</label>
+          <label htmlFor='phone'id='phone-label'>Phone:</label>
           <input
             type='number'
             id='phone'
@@ -78,14 +83,14 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <label htmlFor='role'>Role:</label>
+          <label htmlFor='role' id='role-label'>Role:</label>
           <select name="role" id="role" value={role} onChange={handleChange}>
             <option value="Company">Company</option>
             <option value="Volunteer">Volunteer</option>
           </select>
         </div>
         <div>
-          <label htmlFor='password'>Password:</label>
+          <label htmlFor='password' id='password'>Password:</label>
           <input
             type='password'
             id='password'
@@ -96,7 +101,7 @@ const SignUpForm = () => {
           />
         </div>
         <div>
-          <label htmlFor='confirm'>Confirm Password:</label>
+          <label htmlFor='confirm' id='confirm-password'>Confirm Password:</label>
           <input
             type='password'
             id='confirm'
@@ -108,10 +113,12 @@ const SignUpForm = () => {
         </div>
         <div>
           <button disabled={isFormInvalid()}>Sign Up</button>
-          <button onClick={() => navigate('/')}>Cancel</button>
+          {/* <button onClick={() => navigate('/')}>Cancel</button> */}
         </div>
+        <p>Already have an account?</p>
       </form>
     </main>
+    </>
   );
 };
 
