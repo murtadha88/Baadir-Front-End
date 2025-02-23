@@ -9,7 +9,7 @@ const CompanyEvents = (props) => {
        <main className="company-events-container">
       <header>
         <h1>
-          Welcome Back, <span className="highlight">{user.name}!</span>
+          Welcome Back, <span className="highlight">{user? user.name : null}!</span>
         </h1>
         <p className="role">{user.role}</p>
       </header>
