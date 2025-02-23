@@ -7,7 +7,7 @@ import { UserContext } from '../../contexts/UserContext';
 
 const SignInForm = () => {
   const navigate = useNavigate();
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const [message, setMessage] = useState('');
   const [formData, setFormData] = useState({
     email: '',
@@ -25,7 +25,7 @@ const SignInForm = () => {
       const signedInUser = await signIn(formData);
 
       await setUser(signedInUser);
-      // navigate('/')
+      navigate('/')
     } catch (err) {
       setMessage(err.message);
     }

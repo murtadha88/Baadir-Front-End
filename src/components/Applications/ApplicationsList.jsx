@@ -12,26 +12,28 @@ const ApplicationsList = (props) => {
                         <h2>You dont have applications!</h2>
                     ) : (
                         props.applications.map((application) => (
-                                <ul key={application._id}>
-                                    {props.events.map((event, index) => (
-                                        application.eventId === event._id ? (
-                                            <li key={index}>
-                                                <h4>{event.name}</h4>
-                                                <p>
-                                                    Date: {new Date(event.date).toLocaleDateString('en-GB', {
-                                                        day: '2-digit',
-                                                        month: 'short',
-                                                        year: 'numeric'
-                                                    })}
-                                                </p>
-                                                <button>Delete</button>
-                                            </li>
-                                        ) : (
-                                            null
-                                        )
-                                    ))}
-                                    <hr />
-                                </ul>
+                            <ul key={application._id}>
+                                {props.events.map((event, index) => (
+                                    application.eventId === event._id ? (
+                                        <li key={index}>
+                                            <h4>{event.name}</h4>
+                                            <p>
+                                                Date: {new Date(event.date).toLocaleDateString('en-GB', {
+                                                    day: '2-digit',
+                                                    month: 'short',
+                                                    year: 'numeric'
+                                                })}
+                                            </p>
+
+                                            <button onClick={() => props.handleDeleteApplication(application._id)}>Delete</button>
+                                            <hr />
+                                        </li>
+                                    ) : (
+                                        null
+                                    )
+                                ))}
+                                
+                            </ul>
                         ))
                     )}
                 </>
