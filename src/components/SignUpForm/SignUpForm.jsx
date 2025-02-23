@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router';
 import { signUp } from '../../services/authService'
 
 import { UserContext } from '../../contexts/UserContext'
-import '../../CSS/SignUpForm.css'
+import '../../css/SignUpForm.css'
 
 const SignUpForm = () => {
   const navigate = useNavigate();
