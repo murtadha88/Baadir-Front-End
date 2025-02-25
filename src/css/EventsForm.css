@@ -12,7 +12,8 @@ body {
     margin: 0;
     margin-top: -20px;
 }
-.company-text{
+
+.company-text {
     color: #8894EB;
     font-size: 18px;
     margin-top: 5px;
@@ -29,6 +30,7 @@ body {
     flex-direction: column;
     align-items: flex-start;
 }
+
 #post-event-form {
     width: 300px;
     display: flex;
@@ -36,6 +38,7 @@ body {
     gap: 20px;
     align-items: flex-start;
 }
+
 #post-event-label {
     font-size: 14px;
     font-weight: 600;
@@ -43,16 +46,19 @@ body {
     margin: 0px 0px -20px 0px;
     text-align: left;
 }
+
 #post-event-label::after {
     content: '*';
     color: #F4F6FF;
     margin-left: 3px;
 }
+
 #required-star {
     color: #F7560E;
 }
+
 .post-event-input {
-    width: 155%;
+    width: 100%;
     padding: 10px;
     border: none;
     border-bottom: 1px solid #2A43FF;
@@ -60,20 +66,23 @@ body {
     font-size: 14px;
     font-weight: 300;
     outline: none;
-    color: #8894EB;
+    color: #F7560E;
     background-color: transparent;
     transition: border-color 0.3s ease-in-out;
     text-align: left;
     margin: 0px 0px 5px 0px;
 }
+
 .post-event-input::placeholder {
     color: rgba(42, 67, 255, 0.6);
 }
+
 .post-event-input:focus {
     border-bottom: 1px solid #F7560E;
 }
+
 #event-description {
-    width: 155%;
+    width: 100%;
     height: 60px;
     padding: 12px;
     border: 1px solid #2A43FF;
@@ -81,44 +90,55 @@ body {
     font-size: 14px;
     font-weight: 300;
     outline: none;
-    color: #8894EB;
+    color: #F7560E;
     background-color: transparent;
     border-radius: 5px;
     resize: none;
     margin-top: 10px;
 }
+
 #event-description:focus {
     border: 1px solid #F7560E;
 }
+
 .event-date-location-container {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 10px;
-    
+    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
 }
+
 .event-date-location-container input {
     font-family: 'Lexend', sans-serif;
     font-size: 14px;
     font-weight: 300;
-    width: 300px;
+    width: 120px;
     border: 1px solid #2A43FF;
     border-radius: 5px;
     height: 25px;
     padding: 5px 15px;
 }
+
 .event-date-location-container input:focus {
     border: 1px solid #F7560E;
 }
+
 #event-location {
     width: 200px;
 }
+
 #location-img {
-    width: 26px;
+    width: 22px;
+    height: 25px;
 }
+
 #date-img {
-    width: 30px;
+    width: 24px;
+    height: 24px;
 }
+
 #post-button {
     background: #E96124;
     color: white;
@@ -131,8 +151,22 @@ body {
     font-size: 16px;
     font-family: "lexend";
 }
+
 #post-button:hover {
     color: #E96124;
     background: #ffbb9b;
     font-weight: 700;
+}
+
+#event-deadline-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #E96124;
+}
+
+.edit-event-detail-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
 }

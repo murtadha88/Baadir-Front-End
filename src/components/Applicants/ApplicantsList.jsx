@@ -28,31 +28,37 @@ const ApplicantsList = (props) => {
 
     return (
         <main className="main-container">
-             <header>
+            <header>
                 <h1>
                     Applicants
                 </h1>
-                <p className="role">{user.role}</p>
+                <p className="role">{user? (user.role) : null}</p>
             </header>
-            
-        <ul className="applications-grid">
-            {props.applicants.map((applicant) => (
-                listOfUsers.map((user) => (
-                    applicant.userId === user._id ? (
-                        <div className='container'>
-                             <div className='tag'></div>
-                        <li key={user._id} className='application-card'>
-                            <h4 className="user-name-container"><img src={userIcon} alt="user icon"/><span className="user-name">{user.name}</span></h4>
-                            <p><span className="email">Email:</span> <b>{user.email}</b> </p>
-                            <p><span className="phone">Phone:</span> <b> {user.phone}</b> </p>
-                        </li>
-                        </div>
-                    ) : (
-                        null
-                    )
-                ))
-            ))}
-        </ul>
+
+            {props.applicants.length === 0 ? (
+                <h2 id="Empty">You dont have applicants</h2>
+            ) : (
+                <ul className="applications-grid">
+                    {props.applicants.map((applicant) => (
+                        listOfUsers.map((user) => (
+                            applicant.userId === user._id ? (
+                                <div className='container'>
+                                    <div className='tag'></div>
+                                    <li key={user._id} className='application-card'>
+                                        <h4 className="user-name-container"><img src={userIcon} alt="user icon" /><span className="user-name">{user.name}</span></h4>
+                                        <p><span className="email">Email:</span> <b>{user.email}</b> </p>
+                                        <p><span className="phone">Phone:</span> <b> {user.phone}</b> </p>
+                                    </li>
+                                </div>
+                            ) : (
+                                null
+                            )
+                        ))
+                    ))}
+                </ul>
+            )}
+
+
         </main>
     )
 }

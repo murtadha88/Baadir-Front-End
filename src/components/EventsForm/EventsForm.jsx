@@ -49,41 +49,46 @@ const EventsForm = (props) => {
         <main className="main-container">
 
             <header>
-                <h1>Add an Event</h1>
-                <p className="role">{user.role}</p>
-                </header>
-                <div className="form-container">
-                    <form id="post-event-form" onSubmit={handleSubmit}>
-                        <label id="post-event-label" htmlFor="event-name">event's Name<span id="required-star">*</span></label>
-                        <input
-                            className="post-event-input"
-                            id="event-name"
-                            type="text"
-                            name="name"
-                            value={formData.name}
-                            required
-                            onChange={handleChange}
-                        />
-                        <label id="post-event-label" htmlFor="event-description">event's Description<span id="required-star">*</span></label>
-                        <textarea
-                            id="event-description"
-                            type="text"
-                            name="description"
-                            value={formData.description}
-                            required
-                            onChange={handleChange}
-                        />
-                        <label id="post-event-label" htmlFor="event-volunteers">number of volunteers<span id="required-star">*</span></label>
-                        <input
-                            className="post-event-input"
-                            id="event-volunteers"
-                            type="number"
-                            name="volunteers"
-                            value={formData.volunteers}
-                            required
-                            onChange={handleChange}
-                        />
-                        <div className="event-date-location-container">
+                {props.isFromEdit ? (
+                    <h1>Edit an Event</h1>
+                ) : (
+                    <h1>Add an Event</h1>
+                )}
+                <p className="role">{user? (user.role) : null}</p>
+            </header>
+            <div className="form-container">
+                <form id="post-event-form" onSubmit={handleSubmit}>
+                    <label id="post-event-label" htmlFor="event-name">event's Name<span id="required-star">*</span></label>
+                    <input
+                        className="post-event-input"
+                        id="event-name"
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        required
+                        onChange={handleChange}
+                    />
+                    <label id="post-event-label" htmlFor="event-description">event's Description<span id="required-star">*</span></label>
+                    <textarea
+                        id="event-description"
+                        type="text"
+                        name="description"
+                        value={formData.description}
+                        required
+                        onChange={handleChange}
+                    />
+                    <label id="post-event-label" htmlFor="event-volunteers">number of volunteers<span id="required-star">*</span></label>
+                    <input
+                        className="post-event-input"
+                        id="event-volunteers"
+                        type="number"
+                        name="volunteers"
+                        value={formData.volunteers}
+                        required
+                        onChange={handleChange}
+                    />
+                    <div className="event-date-location-container">
+                        <div className="edit-event-detail-item">
                             <label id="post-event-label" htmlFor="event-location">
                                 {<img id="location-img" src={LocationIcon} alt="location-icon" />}
                             </label>
@@ -118,10 +123,16 @@ const EventsForm = (props) => {
                                 onChange={handleChange}
                                 placeholder="Deadline"
                             />
+                            <span id="event-deadline-title"> Deadline </span>
                         </div>
+                    </div>
+                    {props.isFromEdit ? (
+                        <button id="post-button" type="submit">Edit</button>
+                    ) : (
                         <button id="post-button" type="submit">Post</button>
-                    </form>
-                </div>
+                    )}
+                </form>
+            </div>
         </main>
     )
 }

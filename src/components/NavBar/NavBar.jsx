@@ -9,7 +9,6 @@ const NavBar = () => {
 
 	const handleSignOut = () => {
 		localStorage.removeItem('token')
-		localStorage.removeItem('role')
 		setUser(null)
 	}
 

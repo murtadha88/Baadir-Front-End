@@ -1,123 +1,29 @@
-.signup-container {
-    display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
-    padding-top: 60px;
-}
-
-/* .signup-left, .signup-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-} */
-
-/* #baadir-logo {
-    width: 200px;
-    margin-bottom: 30px;
-    margin-top: 100px;
-    margin-right: 200px;
-} */
-
-#slogan {
-    font-size: 18px;
-    font-weight: 500;
-    color: #F7560E;
-    text-align: left;
-    margin-bottom: 100px;
-    margin-top: 5px;
-    margin-right: 0px;
-}
-
-#volunteer-illustration {
-    width: 450px;
-    margin-top: -60px;
-}
-
-.signup-form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+select-wrapper {
+    position: relative;
     width: 100%;
-    max-width: 400px;
-    margin-bottom: 100px;
 }
 
-form {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-form div {
-    display: flex;
-    flex-direction: column;
-}
-
-label {
-    font-size: 16px;
-    font-weight: 700;
+.select-wrapper::after {
+    content: '▼';
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
     color: #2A43FF;
-    margin-bottom: 5px;
+    pointer-events: none;
 }
 
-label::after {
-    content: '*';
-    color: #F7560E;
-    margin-left: 3px;
+.form-group {
+    margin-bottom: 0.5rem;
 }
 
 input, select {
-    width: 90%;
-    padding: 12px 0px;
-    border: none;
-    border-bottom: 1px solid #2A43FF; 
-    font-size: 16px;
-    outline: none;
-    color: #8894EB;
-    background-color: transparent; 
-    transition: border-color 0.3s ease-in-out;
+    padding: 10px 0;
+    font-size: 0.9rem;
 }
 
-input::placeholder {
-    color: rgba(42, 67, 255, 0.6); 
-}
-
-input:focus, select:focus {
-    border-bottom: 1px solid #F7560E;
-}
-
-
-/* button {
-    width: 140px;
-    height: 50px;
-    margin: 10px;
+.auth-button {
     padding: 10px;
-    background-color: #2A43FF;
-    color: white;
-    font-size: 18px;
-    font-weight: 500;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-} */
-
-button:disabled {
-    background-color: #2A43FF;
-    opacity: 0.3;
-    cursor: not-allowed;
-}
-
-.signup-text {
-    text-align: right;
-    font-size: 14px;
-    margin-top: 10px;
-}
-
-.signup-link {
-    color: #F7560E;
+    font-size: 1rem;
+    margin-top: 0.5rem;
 }

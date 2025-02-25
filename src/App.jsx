@@ -109,8 +109,8 @@ const App = () => {
         <Route path='/baadir/events/:eventId' element={<EventsDetails handleApplicantsList={handleApplicantsList} handleDeleteEvent={handleDeleteEvent} handleAddApplication={handleAddApplication}/>} />
 
         <Route path='/baadir/companyEvents' element={<CompanyEvents companyEvents={companyEvents} handleDeleteEvent={handleDeleteEvent} />} />
-        <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />
-        <Route path='/baadir/events/:eventId/edit' element={<EventsForm handleEditEvent={handleEditEvent} />} />
+        <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} isFromEdit={false} />} />
+        <Route path='/baadir/events/:eventId/edit' element={<EventsForm handleEditEvent={handleEditEvent} isFromEdit={true} />} />
         <Route path='/baadir/events/:eventId/applications' element={<ApplicantsList applicants={applicants} />} />
 
         <Route path='/baadir/applications' element={<ApplicationsList applications={applications} events={events} handleDeleteApplication={handleDeleteApplication} />} />

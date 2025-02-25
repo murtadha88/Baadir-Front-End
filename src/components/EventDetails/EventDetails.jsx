@@ -34,7 +34,7 @@ const EventsDetails = (props) => {
         <main className="company-events-container">
             <header>
                 <h1>Event Details</h1>
-                <p className="role">{user.role}</p>
+                <p className="role">{user? (user.role) : null}</p>
             </header>
 
             <div className="event-details-container">
@@ -56,16 +56,16 @@ const EventsDetails = (props) => {
                         })}
                     </div>
 
-                </div>
 
-                <div className="deadline-section">
-                    <img src={CalendarIcon} alt="Calendar Icon" /> {" "}
-                    {new Date(event.applicationDeadLine).toLocaleDateString("en-GB", {
-                        day: "2-digit",
-                        month: "short",
-                        year: "numeric",
-                    })}
-                    <span> Deadline </span>
+                    <div className="deadline-section">
+                        <img src={CalendarIcon} alt="Calendar Icon" /> {" "}
+                        {new Date(event.applicationDeadLine).toLocaleDateString("en-GB", {
+                            day: "2-digit",
+                            month: "short",
+                            year: "numeric",
+                        })}
+                        <span> Deadline </span>
+                    </div>
                 </div>
 
                 <div className="button-group">

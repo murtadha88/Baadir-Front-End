@@ -13,7 +13,7 @@ const ApplicationsList = (props) => {
                 <h1>
                     Your Applications
                 </h1>
-                <p className="role">{user.role}</p>
+                <p className="role">{user? (user.role) : null}</p>
             </header>
 
 
@@ -23,10 +23,9 @@ const ApplicationsList = (props) => {
 
             {user.role === "Volunteer" ? (
                 <>
-                    {props.applications.length === 0 ? (
-                        <h2>You dont have applications!</h2>
+                    {props.applications.length === 0 && props.events.length === 0 ? (
+                        <h2 id="Empty">You dont have applications!</h2>
                     ) : (
-                        // <div className='applicatins-continer'>
                         <ul className="applications-grid">
                             {props.applications.map((application) =>
 
@@ -54,8 +53,6 @@ const ApplicationsList = (props) => {
                                 )
                             )}
                         </ul>
-
-                        // </div>
                     )}
                 </>
             ) : (
