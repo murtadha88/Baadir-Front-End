@@ -83,11 +83,12 @@ const SignUpForm = () => {
         <div className='input-group'>
           <label htmlFor='phone' id='label-phone'>phone</label>
           <input
-            type='number'
+            type='tel'
             id='phone'
             value={phone}
             name='phone'
             onChange={handleChange}
+            maxlength="8"
             required
           />
         </div>

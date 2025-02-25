@@ -1,7 +1,8 @@
 import { useContext } from 'react'
 import { UserContext } from '../../contexts/UserContext'
 import { Link } from 'react-router'
-
+import "../../css/EventList.css"
+import "../../css/main.css"
 const EventList = (props) => {
     const { user } = useContext(UserContext)
 
@@ -10,36 +11,37 @@ const EventList = (props) => {
     }
 
     return (
-        <main>
-            <ul>
+        <main className="main-container">
+
+            <header>
+                <h1>
+                    Welcome to Baadir, <span className="highlight">{user ? user.name : null}!</span>
+                </h1>
+                <p className="role">{user.role}</p>
+            </header>
+            <h4>Events</h4>
+            <ul className="events-grid">
                 {props.events.map((event) => (
-                    <li key={event._id}>
-                        <h4>{event.name}</h4>
-                        <p>Description: {event.description}</p>
-                        <p>Event Date: {" "}
-                            {new Date(event.date).toLocaleDateString("en-GB", {
-                                day: "2-digit",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <p>Location: {event.location}</p>
-                        <p>Volunteer Needed: {event.volunteers}</p>
-                        <p>Open to: {" "}
-                            {new Date(event.applicationDeadLine).toLocaleDateString("en-GB", {
-                                day: "2-digit",
-                                month: "short",
-                                year: "numeric",
-                            })}
-                        </p>
-                        <p>Created by: {event.userId?.name}</p>
-                        {user.role !== "Company" ? (
-                            <button onClick={() => handleApplication(event._id)}>Apply</button>
-                        ) : (
-                            null
-                        )}
-                        <Link key={event._id} to={`/baadir/events/${event._id}`}><button>View</button></Link>
-                    </li>
+                    <div className='container'>
+                        <div className='tag'></div>
+                        <li key={event._id} className='event-card'>
+                            <h4 className="event-title">{event.name}</h4>
+
+                            <p className="event-description">{event.description}</p>
+                            <div className='buttons-container'>
+                            <div className="event-actions">
+                                <Link to={`/baadir/events/${event._id}`} className="view-button">View</Link>
+                            </div>
+                            <div className="event-container">
+                                {user.role !== "Company" ? (
+                                    <button onClick={() => handleApplication(event._id)} className='apply-button'>Apply</button>
+                                ) : (
+                                    null
+                                )}
+                            </div>
+                            </div>
+                        </li>
+                    </div>
                 ))}
             </ul>
         </main>

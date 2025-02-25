@@ -1,0 +1,23 @@
+.user-name {
+    font-size: 22px;
+    color: #2A43FF;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+.user-name-container{
+    padding-bottom: 30px;
+}
+.user-name-container img{
+    width: 25px;
+    padding-right: 5px;
+}
+.email, .phone{
+    font-weight: 800;
+   
+}
+.email{
+    color: #E96124 ;
+}
+.phone{
+    color: #E96124;
+}

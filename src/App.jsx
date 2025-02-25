@@ -102,6 +102,7 @@ const App = () => {
   return (
     <>
       <NavBar />
+      
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/baadir/events' element={<EventList events={events} handleAddApplication={handleAddApplication} />} />
