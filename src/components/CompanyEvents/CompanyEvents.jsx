@@ -36,6 +36,7 @@ const CompanyEvents = (props) => {
         ))}
       </div>
     </main>
+
     
     </>
   );

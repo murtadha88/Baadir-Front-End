@@ -1,0 +1,104 @@
+.company-events-container {
+    padding: 140px;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 900;
+    color: #2A43FF;
+}
+
+.highlight {
+    color: #E96124;
+}
+
+.role {
+    font-size: 20px;
+    color: rgba(42, 67, 255, 0.6);
+}
+
+.add-event {
+    margin: 20px 0;
+}
+
+.add-event-button {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #2A43FF;
+    font-weight: bold;
+}
+
+
+.plus-button {
+    background: #f9f9ff;
+    border: none;
+    color: #E96124;
+    font-size: 20px;
+    font-weight: 900;
+    margin-right: 8px;
+    cursor: pointer;
+}
+.plus-button:hover {
+    background: #e4e4e4;
+    border: none;
+    color: #b13800;
+    font-size: 20px;
+    font-weight: 900;
+   
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+    gap: 100px;
+    
+
+
+}
+
+.event-card {
+    background: #f9f9ff;
+    padding: 5px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 240px;
+}
+
+.event-title {
+    font-size: 22px;
+    color: #E96124;
+    font-weight: 800;
+}
+
+.event-description {
+    font-size: 14px;
+    color: #2A43FF;
+    height: 62px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.4;
+}
+.event-actions{
+    margin-top: 40px;
+}
+.view-button {
+    background: #2A43FF;
+    color: white;
+    padding: 12px 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.view-button:hover{
+    color: #2A43FF;
+    background: #f9f9ff;
+    font-weight: 700;
+}
+.empty-footer{
+    height: 200px;
+}
+
