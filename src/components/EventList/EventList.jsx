@@ -19,7 +19,7 @@ const EventList = (props) => {
                 </h1>
                 <p className="role">{user.role}</p>
             </header>
-            <h4>Events</h4>
+            <h4 className='events-title'>Events</h4>
             <ul className="events-grid">
                 {props.events.map((event) => (
                     <div className='container'>

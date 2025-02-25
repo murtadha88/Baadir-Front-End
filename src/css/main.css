@@ -3,7 +3,7 @@ main{
     font-family: 'lexend', sans-serif;
 }
 .main-container {
-    padding: 140px;
+    padding: 100px;
 }
 
 header h1 {
@@ -28,6 +28,7 @@ i {
 
 .role {
     color: #E96124;
+    margin-top: -15px;
 }
 
 .events-grid {
