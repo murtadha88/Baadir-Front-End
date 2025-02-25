@@ -41,16 +41,19 @@ const SignUpForm = () => {
   };
 
   return (
-    <>
+    <div className='signup-container'>
+      <div className='signup-left'>
     <img id='baadir-logo' src="src/images/Logo.png" alt="Baadir logo" />
+    <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
     <img id='volunteer-illustration' src="src/images/auth-image.png" alt="volunteer-illustration" />
-      <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
+    </div>
+    <div className='signup-right'>
     <main className='signup-form'>
       {/* <h1>Sign Up</h1> */}
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
-        <div className='name-group'>
-          <label htmlFor='name' id='name-label'>name:</label>
+        <div className='input-group'>
+          <label htmlFor='name'>name</label>
           <input
             type='text'
             id='name'
@@ -60,8 +63,8 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor='email' id='email-label'>Email:</label>
+        <div className='input-group'>
+          <label htmlFor='email'>email</label>
           <input
             type='text'
             id='email'
@@ -71,8 +74,8 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor='phone'id='phone-label'>Phone:</label>
+        <div className='input-group'>
+          <label htmlFor='phone'>phone</label>
           <input
             type='number'
             id='phone'
@@ -82,15 +85,15 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor='role' id='role-label'>Role:</label>
+        <div className='input-group'>
+          <label htmlFor='role'>role</label>
           <select name="role" id="role" value={role} onChange={handleChange}>
             <option value="Company">Company</option>
             <option value="Volunteer">Volunteer</option>
           </select>
         </div>
-        <div>
-          <label htmlFor='password' id='password'>Password:</label>
+        <div className='input-group'>
+          <label htmlFor='password'>password</label>
           <input
             type='password'
             id='password'
@@ -100,8 +103,8 @@ const SignUpForm = () => {
             required
           />
         </div>
-        <div>
-          <label htmlFor='confirm' id='confirm-password'>Confirm Password:</label>
+        <div className='input-group'>
+          <label htmlFor='confirm'>confirm password</label>
           <input
             type='password'
             id='confirm'
@@ -115,10 +118,11 @@ const SignUpForm = () => {
           <button disabled={isFormInvalid()}>Sign Up</button>
           {/* <button onClick={() => navigate('/')}>Cancel</button> */}
         </div>
-        <p>Already have an account?</p>
+        <p className='signup-link'>Already have an account?  <Link to='/SignInForm' >Sign in</Link></p>
       </form>
     </main>
-    </>
+    </div>
+    </div>
   );
 };
 

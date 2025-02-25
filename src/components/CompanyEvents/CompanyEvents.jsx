@@ -2,7 +2,6 @@ import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
 import "../../css/CompanyEvents.css"
-
 const CompanyEvents = (props) => {
   const { user } = useContext(UserContext);
   return (
@@ -37,6 +36,7 @@ const CompanyEvents = (props) => {
         ))}
       </div>
     </main>
+
     
     </>
   );

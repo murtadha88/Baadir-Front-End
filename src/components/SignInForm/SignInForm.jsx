@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router';
 import { signIn } from '../../services/authService';
 
 import { UserContext } from '../../contexts/UserContext';
+import '../../css/SignInForm.css'
 
 const SignInForm = () => {
   const navigate = useNavigate();
@@ -32,12 +33,17 @@ const SignInForm = () => {
   };
 
   return (
-    <main>
-      <h1>Sign In</h1>
+    <div className='signin-container'>
+      <div className='signin-left'>
+        <img id='baadir-logo' src="src/images/Logo.png" alt="Baadir logo" />
+        <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
+        <img id='volunteer-illustration' src="src/images/auth-image.png" alt="volunteer-illustration" />
+      </div>
+      <div className='signin-right'>
       <p>{message}</p>
-      <form autoComplete='off' onSubmit={handleSubmit}>
+      <form className='signin-form' autoComplete='off' onSubmit={handleSubmit}>
         <div>
-          <label htmlFor='email'>email:</label>
+          <label htmlFor='email'>email</label>
           <input
             type='text'
             autoComplete='off'
@@ -49,7 +55,7 @@ const SignInForm = () => {
           />
         </div>
         <div>
-          <label htmlFor='password'>Password:</label>
+          <label htmlFor='password'>password</label>
           <input
             type='password'
             autoComplete='off'
@@ -61,12 +67,14 @@ const SignInForm = () => {
           />
         </div>
         <div>
-          <button>Sign In</button>
-          <button onClick={() => navigate('/')}>Cancel</button>
+          <button className='signin-button'>Sign In</button>
+          {/* <button onClick={() => navigate('/')}>Cancel</button> */}
+          <p>Don't have an account? <a href='/SignUpForm' className='signin-link'>Sign up</a></p>
         </div>
       </form>
-    </main>
-  );
+      </div>
+    </div>
+    );
 };
 
 export default SignInForm
