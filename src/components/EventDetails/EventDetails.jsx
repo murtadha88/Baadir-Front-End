@@ -57,6 +57,7 @@ const EventsDetails = (props) => {
                             year: "numeric",
                         })}
                     </div>
+                    
                 </div>
 
                 <div className="deadline-section">
