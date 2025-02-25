@@ -106,7 +106,7 @@ const App = () => {
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/baadir/events' element={<EventList events={events} handleAddApplication={handleAddApplication} />} />
-        <Route path='/baadir/events/:eventId' element={<EventsDetails handleApplicantsList={handleApplicantsList} handleDeleteEvent={handleDeleteEvent} />} />
+        <Route path='/baadir/events/:eventId' element={<EventsDetails handleApplicantsList={handleApplicantsList} handleDeleteEvent={handleDeleteEvent} handleAddApplication={handleAddApplication}/>} />
 
         <Route path='/baadir/companyEvents' element={<CompanyEvents companyEvents={companyEvents} handleDeleteEvent={handleDeleteEvent} />} />
         <Route path='/baadir/events/new' element={<EventsForm handleAddEvent={handleAddEvent} />} />

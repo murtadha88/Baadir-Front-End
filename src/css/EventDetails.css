@@ -1,0 +1,153 @@
+.company-events-container {
+    padding: 140px;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 34px;
+    font-weight: 900;
+    color: #2A43FF;
+    margin-bottom: -17px;
+}
+
+header span {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #2A43FF;
+    cursor: pointer;
+    padding-top: 10px;
+}
+
+header img {
+    height: 40px;
+}
+
+.event-details-container {
+    background: #f9f9ff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 70%;
+}
+
+.event-details-container h2 {
+    font-size: 32px;
+    color: #E96124;
+    margin-bottom: 24px;
+    font-weight: 800;
+}
+
+.event-details-container p {
+    color: #2A43FF;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.event-volunteers {
+    font-size: 24px;
+    font-weight: 700;
+    color: #E96124;
+    margin-bottom: 32px;
+}
+
+.event-volunteers span {
+    font-size: 48px;
+    margin-bottom: 8px;
+    color: #E96124;
+    padding-right: 10px;
+}
+
+.event-detail-item{
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #2A43FF; 
+}
+
+.detail-item img {
+    width: 24px;
+    height: 24px;
+}
+
+.detail-item .location {
+    width: 20px;
+    height: 25px;
+}
+
+.deadline-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 32px;
+    font-weight: 500;
+}
+
+.deadline-section span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #E96124;
+}
+
+.deadline-section img {
+    width: 24px;
+    height: 24px;
+}
+
+.button-group {
+    margin-top: 40px;
+    display: flex;
+    gap: 16px;
+}
+
+button {
+    padding: 12px 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.apply-button {
+    background: #2A43FF;
+    color: white;
+}
+
+.apply-button:hover {
+    background: #1A30CC;
+}
+
+.applicants-button {
+    background: #E96124;
+    color: white;
+}
+
+.applicants-button:hover {
+    background: #CC4A1A;
+}
+
+.edit-button {
+    background: #2A43FF;
+    color: white;
+}
+
+.delete-button {
+    background: #FF4444;
+    color: white;
+}
+
+.delete-button:hover {
+    background: #CC3636;
+}
