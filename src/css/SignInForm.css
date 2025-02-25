@@ -1,38 +1,29 @@
 .signin-container {
     display: flex;
-    flex-direction: row;
-    width: 100vw;
-    height: 100vh;
+    
+    height: 500px;
+    
 }
 
-.signin-left, .signin-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
+.signin-left{
+    width: 600px;
+}
+.signin-right{
+    width: 350px;
+    margin-top: 120px;
 }
 
 #baadir-logo {
     width: 200px;
     margin-bottom: 20px;
-    margin-right: 200px;
+  
 }
 
-#slogan {
-    font-size: 18px;
-    font-weight: 500;
-    color: #F7560E;
-    text-align: left;
-    margin-bottom: 100px;
-    margin-top: 5px;
-    margin-right: 110px;
-}
 
 #volunteer-illustration {
-    width: 450px;
+    width: 350px;
     margin-bottom: 50px;
+    
 }
 
 .signin-form {
@@ -116,12 +107,15 @@ input:focus {
     background-color: #F7560E;
 }
 
-.signin-link {
+.signup-link {
     text-align: left;
     font-size: 16px;
     margin-top: 10px;
+    color: #F7560E;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.signin-link {
-    color: #F7560E;
+.signup-link:hover{
+    color: #af3700;
 }

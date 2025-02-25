@@ -36,8 +36,6 @@ const SignInForm = () => {
   };
 
   return (
-    <main className="main-container">
-
       <div className='signin-container'>
         <div className='signin-left'>
           <img id='baadir-logo' src={Logo} alt="Baadir logo" />
@@ -45,41 +43,40 @@ const SignInForm = () => {
           <img id='volunteer-illustration' src={auth} alt="volunteer-illustration" />
         </div>
 
-        <div className='signin-right'>
-          <p>{message}</p>
-          <form className='signin-form' autoComplete='off' onSubmit={handleSubmit}>
-            <div>
-              <label htmlFor='email'>Email</label>
-              <input
-                type='text'
-                autoComplete='off'
-                id='email'
-                value={formData.email}
-                name='email'
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <label htmlFor='password'>Password</label>
-              <input
-                type='password'
-                autoComplete='off'
-                id='password'
-                value={formData.password}
-                name='password'
-                onChange={handleChange}
-                required
-              />
-            </div>
-            <div>
-              <button className='signin-button'>Sign In</button>
-              <p>Don't have an account? <a href='/sign-up' className='signin-link'>Sign up</a></p>
-            </div>
-          </form>
-        </div>
+      <div className='signin-right'>
+        <p>{message}</p>
+        <form className='signin-form' autoComplete='off' onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor='email'>Email</label>
+            <input
+              type='text'
+              autoComplete='off'
+              id='email'
+              value={formData.email}
+              name='email'
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor='password'>Password</label>
+            <input
+              type='password'
+              autoComplete='off'
+              id='password'
+              value={formData.password}
+              name='password'
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div>
+            <button className='signin-button'>Sign In</button>
+            <p>Don't have an account? <a href='/sign-up' className='signup-link'>Sign up</a></p>
+          </div>
+        </form>
       </div>
-    </main>
+    </div>
   );
 };
 
