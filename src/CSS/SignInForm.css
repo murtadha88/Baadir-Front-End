@@ -1,0 +1,138 @@
+body {
+    background-color: #fff;
+    font-family: 'Lexend', sans-serif;
+    color: #2A43FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signin-container {
+    display: flex;
+    flex-direction: row;
+    width: 100vw;
+    height: 100vh;
+}
+
+.signin-left, .signin-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+#baadir-logo {
+    width: 200px;
+    margin-bottom: 20px;
+    margin-right: 200px;
+}
+
+#slogan {
+    font-size: 18px;
+    font-weight: 500;
+    color: #F7560E;
+    text-align: left;
+    margin-bottom: 100px;
+    margin-top: 5px;
+    margin-right: 110px;
+}
+
+#volunteer-illustration {
+    width: 450px;
+    margin-bottom: 50px;
+}
+
+.signin-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 100px;
+}
+
+form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+form div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+label {
+    font-size: 16px;
+    font-weight: 700;
+    color: #2A43FF;
+    margin-bottom: 5px;
+}
+
+label::after {
+    content: '*';
+    color: #F7560E;
+    margin-left: 3px;
+}
+
+input {
+    width: 90%;
+    padding: 12px 0px;
+    border: none;
+    border-bottom: 1px solid #2A43FF;
+    font-size: 16px;
+    outline: none;
+    color: #8894EB;
+    background-color: transparent;
+    transition: border-color 0.3s ease-in-out;
+}
+
+input::placeholder {
+    color: rgba(42, 67, 255, 0.6);
+}
+
+input:focus {
+    border-bottom: 1px solid #F7560E;
+}
+
+.signin-button {
+    width: 40%; 
+    max-width: 400px;
+    padding: 12px;
+    background-color: #2A43FF;
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.signin-button:disabled {
+    background-color: #2A43FF;
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.signin-button:hover
+{
+    background-color: #F7560E;
+}
+
+.signin-link {
+    text-align: left;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.signin-link {
+    color: #F7560E;
+}

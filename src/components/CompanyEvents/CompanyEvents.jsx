@@ -1,54 +1,42 @@
 import { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router';
 import { UserContext } from '../../contexts/UserContext';
-
+import "../../css/CompanyEvents.css"
 const CompanyEvents = (props) => {
   const { user } = useContext(UserContext);
   return (
     <>
-      <main>
-        <h1>Welcome Back, {user? user.name : null}</h1>
+       <main className="company-events-container">
+      <header>
+        <h1>
+          Welcome Back, <span className="highlight">{user? user.name : null}!</span>
+        </h1>
+        <p className="role">{user.role}</p>
+      </header>
 
 
-        <Link to="/baadir/events/new">
-          <button>Add Event</button>
+      <div className="add-event">
+        <Link to="/baadir/events/new" className="add-event-button">
+          <button className="plus-button">+</button>
+          <span>Add New Event</span>
         </Link>
+      </div>
 
-        <h4>Your Events</h4>
-        <div>
-
-          <ul >
-            {props.companyEvents.map((event) => (
-              <li key={event._id}>
-                <h4>{event.name}</h4>
-                <p>Description: {event.description}</p>
-                <p>Event Date: {" "}
-                  {new Date(event.date).toLocaleDateString("en-GB", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </p>
-                <p>Location: {event.location}</p>
-                <p>Volunteer Needed: {event.volunteers}</p>
-                <p>Open to: {" "}
-                  {new Date(event.applicationDeadLine).toLocaleDateString("en-GB", {
-                    day: "2-digit",
-                    month: "short",
-                    year: "numeric",
-                  })}
-                </p>
-                <p>Created by: {event.userId?.name}</p>
-                <Link key={event._id} to={`/baadir/events/${event._id}`}><button>View</button></Link>
-                <Link to={`/baadir/companyEvents`}>
-                  <button onClick={() => props.handleDeleteEvent(event._id)}>Delete</button>
-                </Link>
-
-              </li>
-            ))}
-          </ul>
-        </div>
-      </main>
+      <h4>Your Events</h4>
+      <div className="events-grid">
+        {props.companyEvents.map((event) => (
+          <div key={event._id} className="event-card">
+            <h4 className="event-title">{event.name}</h4>
+            <p className="event-description">{event.description}</p>
+            
+            <div className="event-actions">
+              <Link to={`/baadir/events/${event._id}`} className="view-button">View</Link>
+            </div>
+          </div>
+        ))}
+      </div>
+    </main>
+    
     </>
   );
 };
