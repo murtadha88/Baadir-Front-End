@@ -5,6 +5,10 @@ import { signUp } from '../../services/authService'
 import { UserContext } from '../../contexts/UserContext'
 import '../../css/SignUpForm.css'
 
+import auth from "../../images/auth-image.png";
+import Logo from "../../images/Logo.png";
+
+
 const SignUpForm = () => {
   const navigate = useNavigate();
   const { user, setUser } = useContext(UserContext)
@@ -45,12 +49,9 @@ const SignUpForm = () => {
       <div className='signup-left'>
     <div className='signup-container'>
       <div className='signup-left'>
-    <img id='baadir-logo' src="src/images/Logo.png" alt="Baadir logo" />
+    <img id='baadir-logo' src={Logo} alt="Baadir logo" />
     <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
-    <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
-    <img id='volunteer-illustration' src="src/images/auth-image.png" alt="volunteer-illustration" />
-    </div>
-    <div className='signup-right'>
+    <img id='volunteer-illustration' src={auth} alt="volunteer-illustration" />
     </div>
     <div className='signup-right'>
     <main className='signup-form'>

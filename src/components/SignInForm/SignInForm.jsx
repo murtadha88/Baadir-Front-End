@@ -7,6 +7,9 @@ import { UserContext } from '../../contexts/UserContext';
 import '../../css/SignInForm.css'
 import '../../css/SignInForm.css'
 
+import auth from "../../images/auth-image.png";
+import Logo from "../../images/Logo.png";
+
 const SignInForm = () => {
   const navigate = useNavigate();
   const { setUser } = useContext(UserContext);
@@ -36,9 +39,9 @@ const SignInForm = () => {
   return (
     <div className='signin-container'>
       <div className='signin-left'>
-        <img id='baadir-logo' src="src/images/Logo.png" alt="Baadir logo" />
+        <img id='baadir-logo' src={Logo} alt="Baadir logo" />
         <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
-        <img id='volunteer-illustration' src="src/images/auth-image.png" alt="volunteer-illustration" />
+        <img id='volunteer-illustration' src={auth} alt="volunteer-illustration" />
       </div>
       <div className='signin-right'>
     <div className='signin-container'>
