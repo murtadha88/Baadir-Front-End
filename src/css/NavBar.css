@@ -1,0 +1,108 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #2A43FF;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* Ensure the Sign Out button is inside a flex container */
+.nav-right {
+    display: flex;
+    align-items: center;
+
+}
+
+/* Fix Image Sizes */
+.nav-home img{
+    width: 80px;
+    height: auto;
+    cursor: pointer;
+}
+
+.nav-signout {
+    width: 35px;
+    height: auto;
+    cursor: pointer;
+}
+
+.nav-signout img {
+    width: 35px;
+}
+
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding-right: 50px;
+}
+
+.nav-links-not-signed {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding-right: 60px;
+}
+
+.nav-links-not-signed li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links-not-signed a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links-not-signed a:hover {
+    color: #E96124;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #E96124;
+}
+
+.nav-welcome {
+    font-weight: bold;
+    color: white;
+}
+
+.nav-signout img {
+    width: 35px;
+    height: auto;
+}

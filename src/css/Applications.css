@@ -1,0 +1,69 @@
+
+
+.applicatins-continer {
+    display: flex;
+    background-color: #E96124;
+    
+}
+
+.applications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 2fr));
+    gap: 100px;  
+}
+.application-card {
+    background: #f9f9ff;
+    padding: 5px 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 260px;
+    width: 96%;
+}
+.remove-application-button{
+    margin-bottom: 30px;
+        background: #E96124;
+        color: white;
+        padding: 12px 35px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: 'lexend', sans-serif;
+    }
+.remove-application-button:hover {
+        color: #E96124;
+        background: #f7b190;
+        font-weight: 700;
+ }  
+
+
+.view-arrow-icon img{
+    width: 20px;
+    
+}
+.go-to-events{
+    background: #ffffff;
+    border: none;
+    color: #2A43FF;
+    font-size: 14px;
+    font-weight: 900;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    border-radius: 8px;
+    cursor: pointer;
+    
+}
+.go-to-events:hover{
+    background-color: #ededed;
+}
+.back-button{
+    text-decoration: none;
+}
+.event-container-remove{
+    margin-top: 20px;
+}

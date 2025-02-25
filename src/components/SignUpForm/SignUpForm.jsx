@@ -45,7 +45,7 @@ const SignUpForm = () => {
     <img id='baadir-logo' src="src/images/Logo.png" alt="Baadir logo" />
     <img id='volunteer-illustration' src="src/images/auth-image.png" alt="volunteer-illustration" />
       <p id='slogan'>Unlock your fun experience with <br></br>every opportunity you take!</p>
-    <main className='signup-form'>
+      <main className="signup-form ">
       {/* <h1>Sign Up</h1> */}
       <p>{message}</p>
       <form onSubmit={handleSubmit}>
@@ -74,11 +74,12 @@ const SignUpForm = () => {
         <div>
           <label htmlFor='phone'id='phone-label'>Phone:</label>
           <input
-            type='number'
+            type='tel'
             id='phone'
             value={phone}
             name='phone'
             onChange={handleChange}
+            maxlength="8"
             required
           />
         </div>

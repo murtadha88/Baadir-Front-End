@@ -1,8 +1,9 @@
 import { Link } from 'react-router'
 import { useContext } from 'react'
-
+import BaadirLogo from "../../images/BaadirLogo.png";
+import signOutLogo from "../../images/signoutLogo.png";
 import { UserContext } from '../../contexts/UserContext'
-
+import "../../css/NavBar.css"
 const NavBar = () => {
 	const { user, setUser } = useContext(UserContext)
 
@@ -13,17 +14,12 @@ const NavBar = () => {
 	}
 
 	return (
-		<nav>
+		<nav className="navbar">
+			<Link to="/"  className="nav-home"> <img src={BaadirLogo} alt="Baadir Logo" /></Link>
+			
 			{user ? (
-				<ul>
-					{user.role === "Company" ? (
-						<li>Welcome, Admin</li>
-					) : (
-						<li>Welcome, Volunteer</li>
-					)}
-					<li>
-						<Link to="/">Home</Link>
-					</li>
+				  <ul className="nav-links">
+						
 					{user.role === "Company" ? (
 						<>
 							<li>
@@ -41,12 +37,12 @@ const NavBar = () => {
 					<li>
 						<Link to="/baadir/events">Events</Link>
 					</li>
-					<li>
-						<Link to="/" onClick={handleSignOut}>Sign Out</Link>
+					<li className="nav-signout">
+						<Link to="/" onClick={handleSignOut}> <img src={signOutLogo} alt="Sign Out" /></Link>
 					</li>
 				</ul>
 			) : (
-				<ul>
+				<ul className="nav-links-not-signed">
 					<li>
 						<Link to="/sign-up">Sign Up</Link>
 					</li>
