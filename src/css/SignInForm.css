@@ -1,5 +1,5 @@
 body {
-    background-color: #ffffff;
+    background-color: #fff;
     font-family: 'Lexend', sans-serif;
     color: #2A43FF;
     display: flex;
@@ -9,14 +9,14 @@ body {
     margin: 0;
 }
 
-.signup-container {
+.signin-container {
     display: flex;
     flex-direction: row;
     width: 100vw;
     height: 100vh;
 }
 
-.signup-left, .signup-right {
+.signin-left, .signin-right {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -27,8 +27,7 @@ body {
 
 #baadir-logo {
     width: 200px;
-    margin-bottom: 30px;
-    margin-top: 100px;
+    margin-bottom: 20px;
     margin-right: 200px;
 }
 
@@ -39,15 +38,15 @@ body {
     text-align: left;
     margin-bottom: 100px;
     margin-top: 5px;
-    margin-right: 0px;
+    margin-right: 110px;
 }
 
 #volunteer-illustration {
     width: 450px;
-    margin-top: -60px;
+    margin-bottom: 50px;
 }
 
-.signup-form {
+.signin-form {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -61,11 +60,13 @@ form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
 }
 
 form div {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 label {
@@ -81,29 +82,29 @@ label::after {
     margin-left: 3px;
 }
 
-input, select {
+input {
     width: 90%;
     padding: 12px 0px;
     border: none;
-    border-bottom: 1px solid #2A43FF; 
+    border-bottom: 1px solid #2A43FF;
     font-size: 16px;
     outline: none;
     color: #8894EB;
-    background-color: transparent; 
+    background-color: transparent;
     transition: border-color 0.3s ease-in-out;
 }
 
 input::placeholder {
-    color: rgba(42, 67, 255, 0.6); 
+    color: rgba(42, 67, 255, 0.6);
 }
 
-input:focus, select:focus {
+input:focus {
     border-bottom: 1px solid #F7560E;
 }
 
-
-button {
-    width: 100%;
+.signin-button {
+    width: 40%; 
+    max-width: 400px;
     padding: 12px;
     background-color: #2A43FF;
     color: white;
@@ -115,18 +116,23 @@ button {
     margin-top: 15px;
 }
 
-button:disabled {
+.signin-button:disabled {
     background-color: #2A43FF;
     opacity: 0.3;
     cursor: not-allowed;
 }
 
-.signup-text {
-    text-align: right;
-    font-size: 14px;
+.signin-button:hover
+{
+    background-color: #F7560E;
+}
+
+.signin-link {
+    text-align: left;
+    font-size: 16px;
     margin-top: 10px;
 }
 
-.signup-link {
+.signin-link {
     color: #F7560E;
 }
