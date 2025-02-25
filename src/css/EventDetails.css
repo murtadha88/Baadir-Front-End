@@ -1,8 +1,11 @@
 .company-events-container {
-    padding: 140px;
+    padding: 100px;
     font-family: 'Poppins', sans-serif;
 }
 
+header {
+    margin-bottom: 40px;
+}
 
 header img {
     height: 40px;
@@ -10,7 +13,7 @@ header img {
 
 .event-details-container {
     background: #f9f9ff;
-    padding: 40px;
+    padding: 10px 50px 50px 50px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 70%;
@@ -92,13 +95,23 @@ header img {
     gap: 16px;
 }
 
-button {
+.button-group button {
+    background: #E96124;
+    color: white;
     padding: 12px 35px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: "lexend";
+}
+
+.button-group button:hover {
+    color: #E96124;
+    background: #ffbb9b;
+    font-weight: 700;
 }
 
 .apply-button {

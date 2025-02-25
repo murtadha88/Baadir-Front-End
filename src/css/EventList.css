@@ -20,6 +20,11 @@
     font-weight: 700;
 }
 
+.events-title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
 .buttons-container{
     display: flex;
 }

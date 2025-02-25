@@ -3,7 +3,6 @@ import { useParams, Link } from "react-router";
 import * as eventService from '../../services/eventService';
 import { UserContext } from "../../contexts/UserContext";
 import "../../css/EventDetails.css"
-import BackButton from "../../images/BackButton.png";
 import LocationIcon from "../../images/LocationIcon.png";
 import CalendarIcon from "../../images/CalendarIcon.png";
 
@@ -36,7 +35,6 @@ const EventsDetails = (props) => {
             <header>
                 <h1>Event Details</h1>
                 <p className="role">{user.role}</p>
-                <span><img src={BackButton} alt="Back Button" /> View all events</span>
             </header>
 
             <div className="event-details-container">
@@ -57,7 +55,7 @@ const EventsDetails = (props) => {
                             year: "numeric",
                         })}
                     </div>
-                    
+
                 </div>
 
                 <div className="deadline-section">

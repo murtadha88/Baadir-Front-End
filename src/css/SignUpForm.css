@@ -1,19 +1,9 @@
-body {
-    background-color: #ffffff;
-    font-family: 'Lexend', sans-serif;
-    color: #2A43FF;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-}
-
 .signup-container {
     display: flex;
     flex-direction: row;
     width: 100vw;
     height: 100vh;
+    padding-top: 60px;
 }
 
 /* .signup-left, .signup-right {

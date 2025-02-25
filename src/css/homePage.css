@@ -1,5 +1,5 @@
 .main-container-home {
-    padding: 140px 140px 0px 140px;
+    padding: 100px 100px 0px 100px;
     font-family: 'Poppins', sans-serif;
     display: flex;
     
@@ -28,11 +28,12 @@
 
 .baadir-info p {
     width: 100%;
-    max-width: 400px;
+    max-width: 470px;
     text-align: justify;
     line-height: 1.6;
     font-size: 16px;
     color: #2A43FF;
+    margin-top: -20px;
 }
 
 
@@ -61,7 +62,7 @@
 
 .home-page-img img {
     margin-top: 60px;
-    width: 70%;
+    width: 85%;
     max-width: 100%;
     height: auto;
 

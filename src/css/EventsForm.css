@@ -5,47 +5,8 @@ body {
     height: 100vh;
     margin: 0;
 }
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 18px;
-    background-color: #2A43FF;
-    width: 100vw;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
-nav ul {
-    display: flex;
-    list-style: none;
-    gap: 50px;
-    padding: 0;
-    margin: 0;
-    align-items: center;
-}
-nav a {
-    color: #F4F6FF;
-    text-decoration: none;
-}
-nav #baadir-logo-white {
-    width: 90px;
-}
-nav #signout-icon {
-    width: 20%;
-}
-.full-container {
-    margin-left: 10px;
-    margin-top: 80px;
-}
-.header-container {
-    display: flex;
-    flex-direction: column;
-    margin-right: 1000px;
-    margin-top: 0px;
-}
+
+
 #form-title {
     font-size: 24px;
     margin: 0;
@@ -55,21 +16,8 @@ nav #signout-icon {
     color: #8894EB;
     font-size: 18px;
     margin-top: 5px;
-    /* padding: 0px 0px 10px; */
 }
-.back-button-container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    padding: 10px 0px 40px 0px;
-}
-.back-button-container p {
-    font-size: 15px;
-}
-#back-button-img img {
-    width: 24px;
-    height: 24px;
-}
+
 .form-container {
     background: #F4F6FF;
     padding: 30px;
@@ -146,7 +94,8 @@ nav #signout-icon {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 30px;
+    gap: 10px;
+    
 }
 .event-date-location-container input {
     font-family: 'Lexend', sans-serif;
@@ -156,7 +105,7 @@ nav #signout-icon {
     border: 1px solid #2A43FF;
     border-radius: 5px;
     height: 25px;
-    padding: 5px 25px;
+    padding: 5px 15px;
 }
 .event-date-location-container input:focus {
     border: 1px solid #F7560E;
@@ -165,25 +114,25 @@ nav #signout-icon {
     width: 200px;
 }
 #location-img {
-    width: 28px;
-    height: 30px;
+    width: 26px;
 }
 #date-img {
     width: 30px;
-    height: 30px;
 }
 #post-button {
-    width: 40%;
-    padding: 12px;
-    background-color: #2A43FF;
+    background: #E96124;
     color: white;
-    font-size: 18px;
-    font-weight: 500;
+    padding: 12px 35px;
     border: none;
-    border-radius: 8px;
+    border-radius: 5px;
     cursor: pointer;
+    text-decoration: none;
     margin-top: 10px;
+    font-size: 16px;
+    font-family: "lexend";
 }
 #post-button:hover {
-    background-color: #F7560E;
+    color: #E96124;
+    background: #ffbb9b;
+    font-weight: 700;
 }

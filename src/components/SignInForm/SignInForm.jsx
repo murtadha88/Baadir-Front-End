@@ -5,6 +5,7 @@ import { signIn } from '../../services/authService';
 import { UserContext } from '../../contexts/UserContext';
 
 import '../../css/SignInForm.css';
+import "../../css/main.css"
 
 import auth from "../../images/auth-image.png";
 import Logo from "../../images/Logo.png";
@@ -35,12 +36,12 @@ const SignInForm = () => {
   };
 
   return (
-    <div className='signin-container'>
-      <div className='signin-left'>
-        <img id='baadir-logo' src={Logo} alt="Baadir logo" />
-        <p id='slogan'>Unlock your fun experience with <br />every opportunity you take!</p>
-        <img id='volunteer-illustration' src={auth} alt="volunteer-illustration" />
-      </div>
+      <div className='signin-container'>
+        <div className='signin-left'>
+          <img id='baadir-logo' src={Logo} alt="Baadir logo" />
+          <p id='slogan'>Unlock your fun experience with <br />every opportunity you take!</p>
+          <img id='volunteer-illustration' src={auth} alt="volunteer-illustration" />
+        </div>
 
       <div className='signin-right'>
         <p>{message}</p>
