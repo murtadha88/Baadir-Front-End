@@ -29,7 +29,7 @@ const CompanyEvents = (props) => {
         <h4>Your Events</h4>
         <div className="events-grid">
           {props.companyEvents.length === 0 ? (
-            <h2 id="Empty">You dont have applications!</h2>
+            <h2 id="Empty">You dont have Events!</h2>
           ) : (
             props.companyEvents.map((event) => (
               <div className='container' key={event._id}>

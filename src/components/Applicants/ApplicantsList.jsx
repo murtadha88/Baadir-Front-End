@@ -36,7 +36,7 @@ const ApplicantsList = (props) => {
             </header>
 
             {props.applicants.length === 0 ? (
-                <h2 id="Empty">You dont have applicants</h2>
+                <h2 id="Empty">You dont have Applicants!</h2>
             ) : (
                 <ul className="applications-grid">
                     {props.applicants.map((applicant) => (

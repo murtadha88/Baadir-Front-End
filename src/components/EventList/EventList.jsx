@@ -22,7 +22,7 @@ const EventList = (props) => {
             <h4 className='events-title'>Events</h4>
             <ul className="events-grid">
                 {props.events.length === 0 ? (
-                    <h2 id="Empty">There is no Events</h2>
+                    <h2 id="Empty">There is no Events!</h2>
                 ) : (
                     props.events.map((event) => (
                         <div className='container' key={event._id}>

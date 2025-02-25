@@ -24,7 +24,7 @@ const ApplicationsList = (props) => {
             {user.role === "Volunteer" ? (
                 <>
                     {props.applications.length === 0 && props.events.length === 0 ? (
-                        <h2 id="Empty">You dont have applications!</h2>
+                        <h2 id="Empty">You dont have Applications!</h2>
                     ) : (
                         <ul className="applications-grid">
                             {props.applications.map((application) =>
