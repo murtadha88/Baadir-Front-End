@@ -45,6 +45,7 @@ const EventsDetails = (props) => {
                 <div className="event-detail-item">
                     <div className="detail-item">
                         <img src={LocationIcon} alt="Location Icon" className="location" /> {event.location}
+                        <span> Location </span>
                     </div>
 
                     <div className="detail-item">
@@ -54,6 +55,7 @@ const EventsDetails = (props) => {
                             month: "short",
                             year: "numeric",
                         })}
+                        <span> Event Date </span>
                     </div>
 
 

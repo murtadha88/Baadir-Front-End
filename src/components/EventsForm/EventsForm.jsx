@@ -127,7 +127,7 @@ const EventsForm = (props) => {
                         </div>
                     </div>
                     {props.isFromEdit ? (
-                        <button id="post-button" type="submit">Edit</button>
+                        <button id="post-button" type="submit">Save</button>
                     ) : (
                         <button id="post-button" type="submit">Post</button>
                     )}

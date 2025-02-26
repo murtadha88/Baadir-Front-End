@@ -8,8 +8,9 @@
 ### Background Information
 **Baadir** was built to bridge the gap between organizations seeking volunteers and individuals eager to contribute. The platform's goal is to create a seamless and intuitive experience, ensuring that users can easily find and participate in events that align with their interests. By providing a structured and efficient system for volunteer management, Baadir empowers communities and promotes meaningful engagement.
 
-### Planning Materials:
-- [Project Plan](https://trello.com/b/lxZbYipY/project-planning-baadir)
+### Getting Started:
+- [Getting Started](https://baadir-front-6205clchi-murtadhas-projects.vercel.app/)
+- [Back-End](https://github.com/murtadha88/Baadir-Back-End)
 
 ## Technologies Used:
 - **JavaScript**: For handling the logic of CRUD in backend
@@ -30,5 +31,4 @@
 
 - **Dynamic Volunteer Slots**: Automatically decreases the available volunteer slots when a user applies, ensuring accurate event capacity tracking.
 
-## Additions
-- [Back-End]()
+- **Special Requirments and Rewards**: allowing companies to add special requirments like minimum age, has or have a car, and rewards when completing the event
